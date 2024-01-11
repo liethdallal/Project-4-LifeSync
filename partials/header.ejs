@@ -1,0 +1,11 @@
+<% if (user) { %>
+    <div id='logoutlogin'>
+      <a href='/logout'><button>Log Out</button></a>
+    <span id='welcomeuser'>Hi <%= user.name %> </span>
+    </div>
+  <% } else { %>
+    <div id='logindiv'>
+      <a id='loginlink' href='/auth/google'><button id='loginbutton'> Login with Google</button></a>
+    </div>
+
+  <% } %>  
