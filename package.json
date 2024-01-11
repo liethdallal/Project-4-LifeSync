@@ -1,0 +1,17 @@
+{
+  "name": "project-4-lifesync",
+  "version": "1.0.0",
+  "description": "Hey there! Welcome to LifeSync – the ultimate lifestyle management platform I've crafted with you in mind. Life can get hectic, so I've designed LifeSync to help you seamlessly organize different facets of your daily routine. Packed with a friendly interface and powerful features, LifeSync is your go-to solution for efficient task management, entertainment tracking, financial planning, and health monitoring – all neatly consolidated in one place.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2"
+  }
+}
