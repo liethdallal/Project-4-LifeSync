@@ -51,13 +51,55 @@ app.set('view engine', 'ejs')
 
 app.set('views', path.join(__dirname, 'views'))
 
-app.get('/', (req, res) => {
-    res.render('homepage')
-})
-
 app.use('/', indexRouter)
 
 app.use('/users', userRouter)
+
+//Main Routes 
+
+app.get('/', (req, res) => {
+    res.render('homepage')
+})
+app.get('/todo-scheduler', (req, res) => (
+  res.render('todo')
+))
+app.get('/videogames-movie-scheduler', (req, res) => (
+  res.render('gamemovie')
+))
+app.get('/finance-manager', (req, res) => (
+  res.render('finance')
+))
+app.get('/nutrition-manager', (req, res) => (
+  res.render('nutrition')
+))
+
+//Create A Form Routes 
+
+app.get('/todo-form', (req, res) => (
+  res.render('todoform')
+))
+
+app.get('/videogame-form', (req, res) => (
+  res.render('gameform')
+))
+
+app.get('/movie-form', (req, res) => (
+  res.render('movieform')
+))
+
+app.get('/subscription-form', (req, res) => (
+  res.render('subscriptionform')
+))
+
+app.get('/onetimepayment-form', (req, res) => (
+  res.render('onetimepaymentform')
+))
+
+app.get('/nutrition-form', (req, res) => (
+  res.render('nutritionform')
+))
+
+// Authentication 
 
 app.use(session({
   secret: process.env.SESSION_SECRET,
