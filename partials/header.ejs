@@ -1,11 +1,17 @@
+
 <% if (user) { %>
     <div id='logoutlogin'>
-      <a href='/logout'><button>Log Out</button></a>
-    <span id='welcomeuser'>Hi <%= user.name %> </span>
+      <a href='/'><button id='homepagebutton'> Homepage </button></a>
+      <a href='/logout'><button id='loginoutbutton'>Sign Out</button></a>
+      <h1 id="lifesync-title">LifeSync</h1>
+
     </div>
   <% } else { %>
-    <div id='logindiv'>
-      <a id='loginlink' href='/auth/google'><button id='loginbutton'> Login with Google</button></a>
+    <div id='logoutlogin'>
+      <a href='/'><button id='homepagebutton'> Homepage </button></a>
+      <a id='loginlink' href='/auth/google'><button id='loginoutbutton'> Sign In</button></a>
+      <h1 id="lifesync-title">LifeSync</h1>
+
     </div>
 
   <% } %>  

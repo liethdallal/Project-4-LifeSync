@@ -1,3 +1,47 @@
-h1{
+body{
+    background-color: #B1BB56;
+    margin: 0px;
+    padding: 0px;
+}
+button {
+    cursor: pointer;
+}
+button:hover{
+    background-color: #CF8378;
+}
+#loginoutbutton{
+    float: right;
+    margin: 20px;
+    height: 50px;
+    width: 90px;
+    font-size: 20px;
+    border-radius: 10px;
+    border: none;
+}
+#lifesync-title{
+    margin:0px;
+    padding: 15px;
     text-align: center;
+    font-size: 40px;
+}
+#logoutlogin{
+    background-color: #D7CEC7;
+    height: 90px;
+    border: none;
+}
+#homepagebutton{
+    float: left;
+    margin: 20px;
+    height: 50px;
+    width: 90px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: none;
+}
+footer{
+    background-color: #7C7777;
+    position: absolute;
+    height: 70px;
+    width: 100%;
+    margin-top: 1030px;
 }
