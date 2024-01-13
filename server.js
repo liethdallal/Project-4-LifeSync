@@ -63,7 +63,7 @@ app.get('/', (req, res) => {
 app.get('/todo-scheduler', (req, res) => (
   res.render('todo')
 ))
-app.get('/videogames-movie-scheduler', (req, res) => (
+app.get('/videogames-movies-list', (req, res) => (
   res.render('gamemovie')
 ))
 app.get('/finance-manager', (req, res) => (
