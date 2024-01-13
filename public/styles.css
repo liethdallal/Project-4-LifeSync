@@ -1,5 +1,5 @@
 body{
-    background-color: #B1BB56;
+    background-color: black;
     margin: 0px;
     padding: 0px;
 }
@@ -8,6 +8,14 @@ button {
 }
 button:hover{
     background-color: #CF8378;
+    transition: background-color 0.3s;
+}
+footer{
+    background-color: #7C7777;
+    position: absolute;
+    height: 70px;
+    width: 100%;
+    margin-top: 110px;
 }
 #loginoutbutton{
     float: right;
@@ -25,7 +33,7 @@ button:hover{
     font-size: 40px;
 }
 #logoutlogin{
-    background-color: #D7CEC7;
+    background-color: #dadada;
     height: 90px;
     border: none;
 }
@@ -38,10 +46,36 @@ button:hover{
     border-radius: 10px;
     border: none;
 }
-footer{
-    background-color: #7C7777;
-    position: absolute;
-    height: 70px;
-    width: 100%;
-    margin-top: 900px;
+#homepage-flex-container{
+display: flex;
+justify-content: center;
+align-items: center;
+margin-top: 110px;
+}
+#homepage-grid-container{
+    display:grid;
+    grid-template-columns: 400px 400px;
+    grid-column-gap: 200px;
+    grid-row-gap: 200px;
+}
+.thefour{
+    background-color: aliceblue;
+    height: 400px;
+    width: 400px;
+    border-radius: 120px;
+}
+.thefour:hover{
+    transform: scale(1.05);
+}
+#fire{
+    background-color: #BB3957;
+}
+#wind{
+    background-color: #D6A149;
+}
+#lightning{
+    background-color: #614689;
+}
+#ice{
+    background-color: #4068A8;
 }

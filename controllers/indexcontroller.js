@@ -1,9 +1,10 @@
 const router = require('express').Router()
 const passport = require('passport')
 
-router.get('/', function(req, res) {
-  res.redirect('/profile')
-})
+//If i reach my stretch goal i will put this into effect
+// router.get('/', function(req, res) {
+//   res.redirect('/profile')
+// })
 
 router.get('/auth/google', passport.authenticate(
   'google',
