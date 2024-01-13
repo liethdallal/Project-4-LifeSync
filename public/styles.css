@@ -25,6 +25,8 @@ footer{
     width: 100%;
     margin-top: 110px;
 }
+
+/* HomePage Styling Starts here  */
 #loginoutbutton{
     float: right;
     margin: 20px;
@@ -71,13 +73,13 @@ margin-top: 110px;
     display:grid;
     grid-template-columns: 400px 400px;
     grid-column-gap: 200px;
-    grid-row-gap: 200px;
+    grid-row-gap: 170px;
 }
 .thefour{
     background-color: aliceblue;
-    height: 400px;
-    width: 400px;
-    border-radius: 120px;
+    height: 440px;
+    width: 440px;
+    border-radius: 95px;
     font-family: "Tektur", sans-serif;
 
 }
@@ -100,3 +102,14 @@ margin-top: 110px;
     text-align: center;
     margin: 13px;
 }
+.route-pics{
+    width: 270px;
+    height: 270px;
+}
+.routes-pic-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+/* HomePage Styling Ends here  */
