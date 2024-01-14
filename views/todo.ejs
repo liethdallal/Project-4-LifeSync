@@ -1,16 +1,101 @@
 <div id="to-do-flexbox">
 
     <div id="to-do-container">
-        
+        <div id="task-due-container">
+
+            <div class="task-containers">
+                <h1 id="add-delete">Add/Delete</h1>
+            </div>
+            
+            <div class="task-containers">
+                <h1 id="tasks-title">Tasks</h1>
+            </div>
+
+            <div class="task-containers">
+                <h1 id="due-title">Due</h1>
+            </div>
+            
+        </div>
+        <hr id="todoline">
+
         <% if (user) { %> 
                 <% user.lists.toDo.forEach(item => { %>
 
+                    <div class="task-div">
+
+                        <form action="/profile/remove/<%=  %>?_method=PUT" method="POST">
+                            <input type="hidden" name="_method" value="DELETE">
+
+                        <div class="task-containers">
+
+                            <button type="submit">Delete</button>
+
+                        <div class="task-containers">
+                        
+                        </form>
+
+                        <div class="task-containers">
+
+                            <h2 class="task"><% item.task  %></h2>
+                        </div>
+
+                    <div class="task-containers">
+                    
+                            <h2 class="due"><% item.due  %></h2>
+                        </div>
+
+                    </div>
+
+                    <form action="/profile" method="POST">
+                        <div class='addtask'>
+                          <input type="text" name="title" class="form" placeholder="Task Title" required>
+                        </div>
+                        <div class="task-containers">
+                          <button class='addtask' type="submit">Add Task</button>
+                        </div>
+                      </form>
 
         <% }); %>
 
         <% } else { %>
 
         <% } %>
+
+        <div class="task-div">
+            <form action="/profile/remove/<%=  %>?_method=PUT" method="POST">
+                <input type="hidden" name="_method" value="DELETE">
+                <div class="task-containers">
+                    <button class="delete-button" type="submit">Delete</button>
+                </div>
+            </form>
+
+            <div class="task-containers">
+                <h2 class="task">Test Task</h2>
+            </div>
+
+            <div class="task-containers">
+                <h2 class="due">Test Dute</h2>
+            </div>
+
+        </div>
+
+        <form action="/todo-form" >
+            <div class='addtask'>
+
+                <div class="task-containers">
+                    <button id="add-task-button" type="submit">Add Task</button>
+                </div>
+
+                <div class="task-containers">
+                    <h1 class="task">-----------</h1>
+                </div>
+
+                <div class="task-containers">
+                    <h1 class="due">-------------</h1>
+                </div>
+
+            </div>
+          </form>
 
     </div>
 

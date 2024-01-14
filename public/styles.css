@@ -13,8 +13,13 @@ a {
   }
 button {
     cursor: pointer;
+    border: none;
 }
-button:hover{
+#homepagebutton:hover{
+    background-color: #CF8378;
+    transition: background-color 0.3s;
+}
+#loginoutbutton:hover{
     background-color: #CF8378;
     transition: background-color 0.3s;
 }
@@ -125,4 +130,79 @@ margin-top: 110px;
     height: 1000px;
     background-color: #BB3957;
     margin-top: 110px;
+}
+#task-due-container{
+    display: flex;
+    justify-content: space-around;
+}
+#tasks-title{
+    font-family: "Tektur", sans-serif;
+    font-size: 50px;
+    margin: 0px;
+
+}
+#due-title{
+    font-family: "Tektur", sans-serif;
+    font-size: 50px;
+    margin: 0px;
+}
+#todoline{
+    width: 85%;
+    border: none;
+    height: 20px;
+    background-color: black;
+}
+.task-div{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 40px;
+}
+.task{
+    font-family: "Tektur", sans-serif;
+    font-size: 25px;
+    margin: 0px;
+}
+.due{
+    font-family: "Tektur", sans-serif;
+    font-size: 25px;
+    margin: 0px;
+}
+.delete-button{
+    width: 170px;
+    height: 50px;
+    font-size: 30px;
+    font-family: "Tektur", sans-serif;
+}
+.delete-button:hover{
+    background-color: crimson;
+    transition: background-color 0.3s;
+}
+#add-task-button:hover{
+    background-color:yellowgreen;
+    transition: background-color 0.3s;
+}
+#add-delete{
+    display: block;
+    font-size: 30px;
+    margin: 0px;
+    font-family: "Tektur", sans-serif;
+    margin-top: 10px;
+
+}
+#add-task-button{
+    width: 170px;
+    height: 50px;
+    font-size:30px ;
+    font-family: "Tektur", sans-serif;
+
+}
+.addtask{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 40px;
+}
+.task-containers{
+    height: 50px;
+    width: 200px;
+    margin: 0px;
 }
