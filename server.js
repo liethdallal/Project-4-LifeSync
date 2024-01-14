@@ -13,6 +13,7 @@ const bodyParser = require('body-parser')
 const ejsLayouts = require('express-ejs-layouts')
 const indexRouter = require('./controllers/indexcontroller')
 const userRouter = require('./controllers/usercontroller')
+const movieRouter = require('./controllers/moviecontroller')
 const PORT = process.env.PORT 
 
 
@@ -54,6 +55,8 @@ app.set('views', path.join(__dirname, 'views'))
 app.use('/', indexRouter)
 
 app.use('/users', userRouter)
+
+app.use('/movie-form', movieRouter )
 
 //Main Routes 
 

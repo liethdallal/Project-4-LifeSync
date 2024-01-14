@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 const User = require('../controllers/usercontroller')
 const passport = require('../connections/passport') 
+const Movie = require('../models/moviemodel')
 
 function index(req, res, next) {
   let modelQuery = req.query.name ? {name: new RegExp(req.query.name, 'i')} : {}
@@ -17,5 +18,10 @@ function index(req, res, next) {
     })
   })
 }
+
+router.get('/users', index)
+
+
+
 
 module.exports = router

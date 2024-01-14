@@ -1,1 +1,10 @@
-<h1>Movie form page </h1>
+<h1 id='newmovie'>Add New Movie</h1>
+<div class='container'>
+    <div class='newMovieForm'>
+        <form action='/movie-form' method='POST'>
+            <input type='text' id='title' name='title' placeholder='Title' required>
+            <input type='text' id='img' name='img' placeholder='Image Url' required>
+            <button id='add-movie' type='submit'>Add Movie</button>
+        </form>
+    </div>
+</div>
