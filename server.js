@@ -14,6 +14,7 @@ const ejsLayouts = require('express-ejs-layouts')
 const indexRouter = require('./controllers/indexcontroller')
 const userRouter = require('./controllers/usercontroller')
 const movieRouter = require('./controllers/moviecontroller')
+const todoRouter = require('./controllers/todocontroller')
 const PORT = process.env.PORT 
 
 
@@ -37,6 +38,8 @@ app.use(session({
   saveUninitialized: true,
 }))
 
+//Authentication
+
 app.use(passport.initialize())
 
 app.use(passport.session())
@@ -54,18 +57,17 @@ app.set('views', path.join(__dirname, 'views'))
 
 app.use('/', indexRouter)
 
-app.use('/users', userRouter)
+app.use('/', userRouter)
 
-app.use('/movie-form', movieRouter )
+app.use('/', movieRouter )
 
+app.use('/', todoRouter)
 //Main Routes 
 
 app.get('/', (req, res) => {
     res.render('homepage')
 })
-app.get('/todo-scheduler', (req, res) => (
-  res.render('todo')
-))
+
 app.get('/videogames-movies-list', (req, res) => (
   res.render('gamemovie')
 ))
@@ -78,9 +80,7 @@ app.get('/nutrition-manager', (req, res) => (
 
 //Create A Form Routes 
 
-app.get('/todo-form', (req, res) => (
-  res.render('todoform')
-))
+
 
 app.get('/videogame-form', (req, res) => (
   res.render('gameform')
@@ -102,17 +102,6 @@ app.get('/nutrition-form', (req, res) => (
   res.render('nutritionform')
 ))
 
-// Authentication 
-
-app.use(session({
-  secret: process.env.SESSION_SECRET,
-  resave: false,
-  saveUninitialized: true,
-}))
-
-app.use(passport.initialize())
-
-app.use(passport.session())
 
 
 app.listen(PORT, () => {

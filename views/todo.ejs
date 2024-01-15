@@ -18,78 +18,42 @@
         </div>
         <hr id="todoline">
 
-        <% if (user) { %> 
-                <% user.lists.toDo.forEach(item => { %>
-
+        <% if (user) { %>
+            <% todos.forEach(todo => { %>
+                <% if (todo.addedBy.toString() === currentUser.toString()) { %>
                     <div class="task-div">
-
-                        <form action="/profile/remove/<%=  %>?_method=PUT" method="POST">
+                        <form action="/profile/remove/<%= todo._id %>?_method=PUT" method="POST">
                             <input type="hidden" name="_method" value="DELETE">
-
-                        <div class="task-containers">
-
-                            <button type="submit">Delete</button>
-
-                        <div class="task-containers">
-                        
+                            <div class="task-containers">
+                                <button class="delete-button" type="submit">Delete</button>
+                            </div>
                         </form>
-
                         <div class="task-containers">
-
-                            <h2 class="task"><% item.task  %></h2>
+                            <h2 class="task"><%= todo.task %></h2>
                         </div>
-
-                    <div class="task-containers">
-                    
-                            <h2 class="due"><% item.due  %></h2>
+                        <div class="task-containers">
+                            <h2 class="due"><%= todo.due %></h2>
                         </div>
-
                     </div>
-
-
-
-        <% }); %>
-        
-        <form action="/todo-form" >
-            <div class='addtask'>
-
-                <div class="task-containers">
-                    <button id="add-task-button" type="submit">Add Task</button>
+                <% } %>
+            <% }); %>
+            <form action="/todo-form" method="get">
+                <div class='addtask'>
+                    <div class="task-containers">
+                        <button id="add-task-button" type="submit">Add Task</button>
+                    </div>
+                    <div class="task-containers">
+                        <h1 class="task">-----------</h1>
+                    </div>
+                    <div class="task-containers">
+                        <h1 class="due">-------------</h1>
+                    </div>
                 </div>
-
-                <div class="task-containers">
-                    <h1 class="task">-----------</h1>
-                </div>
-
-                <div class="task-containers">
-                    <h1 class="due">-------------</h1>
-                </div>
-
-            </div>
-          </form> 
-
+            </form>
         <% } else { %>
             <h1 id="not-signed-in">To use LifeSync Features you need to sign in!</h1>
         <% } %>
 
-        <!-- <div class="task-div">
-            <form action="/profile/remove/<%=  %>?_method=PUT" method="POST">
-                <input type="hidden" name="_method" value="DELETE">
-                <div class="task-containers">
-                    <button class="delete-button" type="submit">Delete</button>
-                </div>
-            </form>
-
-            <div class="task-containers">
-                <h2 class="task">Test Task</h2>
-            </div>
-
-            <div class="task-containers">
-                <h2 class="due">Test Dute</h2>
-            </div>
-
-        </div>
-         -->
 
     </div>
 
