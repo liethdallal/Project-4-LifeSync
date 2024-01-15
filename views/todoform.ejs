@@ -1,1 +1,19 @@
-<h1>to do form page</h1>
+<div id="to-do-form-container">
+    
+    <h1 id="to-do-form-title">To-do Form</h1>
+
+    <form action="/add-task-route" method="post">
+        <label id="task-label" for="task">Task:</label>
+        <input type="text" id="task" name="task" required>
+        <br>
+        <label id="due-label" for="due">Due:</label>
+        <input type="text" id="due" name="due" required>
+        <br>
+        <div id="to-do-form-submit-button-container">
+            <button id="to-do-form-submit-button" type="submit">Submit</button>
+        </div>
+
+    </form>
+    
+</div>
+    
