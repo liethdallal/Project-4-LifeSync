@@ -22,7 +22,7 @@
             <% todos.forEach(todo => { %>
                 <% if (todo.addedBy.toString() === currentUser._id.toString()) { %>
                     <div class="task-div">
-                        <form action="/profile/remove/<%= todo._id %>?_method=PUT" method="POST">
+                        <form action="/remove/<%= todo._id %>" method="post">
                             <input type="hidden" name="_method" value="DELETE">
                             <div class="task-containers">
                                 <button class="delete-button" type="submit">Delete</button>

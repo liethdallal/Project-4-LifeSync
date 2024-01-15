@@ -1,7 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const Todo = require('../models/todomodel');
-const User = require('../models/usermodel')
+const User = require('../models/usermodel');
+const { json } = require('body-parser');
+const mongoose = require('../connections/connection')
 
 
 
@@ -26,29 +28,46 @@ router.post('/todo-form', async (req, res) => {
   });
 
 
-//   router.get('/:id', async (req, res) => {
-//     try {
-//       const todo = await Todo.findById(req.params.id);
-//       res.json(todo);
-//     } catch (error) {
-//       res.status(500).json({ error: error.message });
-//     }
-//   });
 
 
-//   router.delete('/:id', async (req, res) => {
-//     try {
-//       const deletedTodo = await Todo.findByIdAndDelete(req.params.id);
-//       res.json(deletedTodo);
-//     } catch (error) {
-//       res.status(500).json({ error: error.message });
-//     }
-//   });
+  router.post('/remove/:taskId', async (req, res) => {
+    try {
+      if (!req.isAuthenticated()) {
+        return res.status(401).json({ error: 'Unauthorized' });
+      }
+  
+      const taskId = req.params.taskId;
+
+
+  
+      const taskToRemove = await Todo.findById(taskId);
+  
+      if (!taskToRemove) {
+        return res.status(404).json({ error: 'Task not found' });
+      }
+  
+      await Todo.findByIdAndDelete(taskId);
+  
+      res.redirect('/todo-scheduler');
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: 'Internal Server Error' });
+    }
+  });
+
+
+
+
+
+
+
+
+
+
 
   router.get('/todo-scheduler', async (req, res) => {
     try {
       const todos = await Todo.find();
-      const users = await User.find(); // Assuming you have a User model
 
 
       const currentUser = req.user;
