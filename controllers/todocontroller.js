@@ -2,8 +2,6 @@ const express = require('express');
 const router = express.Router();
 const Todo = require('../models/todomodel');
 const User = require('../models/usermodel');
-const { json } = require('body-parser');
-const mongoose = require('../connections/connection')
 
 
 
@@ -32,36 +30,31 @@ router.post('/todo-form', async (req, res) => {
 
   router.post('/remove/:taskId', async (req, res) => {
     try {
-      if (!req.isAuthenticated()) {
-        return res.status(401).json({ error: 'Unauthorized' });
-      }
+
   
       const taskId = req.params.taskId;
 
+      const userTasks = req.user.lists.toDo;
 
-  
-      const taskToRemove = await Todo.findById(taskId);
-  
-      if (!taskToRemove) {
-        return res.status(404).json({ error: 'Task not found' });
-      }
+      const taskIndex = userTasks.findIndex(task => task._id === taskId);
+
+      
   
       await Todo.findByIdAndDelete(taskId);
+
+      userTasks.splice(taskIndex, 1);
+
+      await req.user.save();
   
+
       res.redirect('/todo-scheduler');
+
+      
     } catch (error) {
       console.error(error);
       res.status(500).json({ error: 'Internal Server Error' });
     }
   });
-
-
-
-
-
-
-
-
 
 
 
@@ -73,12 +66,13 @@ router.post('/todo-form', async (req, res) => {
       const currentUser = req.user;
 
 
-    console.log(currentUser);
       res.render('todo', { todos, currentUser });
+
     } catch (error) {
       res.status(500).json({ error: error.message });
     }
   });
+
 
   router.get('/todo-form', (req, res) => (
     res.render('todoform')
