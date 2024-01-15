@@ -51,7 +51,7 @@ router.post('/todo-form', async (req, res) => {
       const users = await User.find(); // Assuming you have a User model
 
 
-      const currentUser = req.user._id;
+      const currentUser = req.user;
 
 
     console.log(currentUser);
