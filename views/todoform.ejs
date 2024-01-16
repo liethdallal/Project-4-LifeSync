@@ -2,18 +2,27 @@
     
     <h1 id="to-do-form-title">To-do Form</h1>
 
-    <form action="/todo-form" method="post">
-        <label id="task-label" for="task">Task:</label>
-        <input type="text" id="task" name="task" required>
-        <br>
-        <label id="due-label" for="due">Due:</label>
-        <input type="text" id="due" name="due" required>
-        <br>
-        <div id="to-do-form-submit-button-container">
-            <button id="to-do-form-submit-button" type="submit">Submit</button>
-        </div>
+    <% if (user) { %>
 
-    </form>
+        <form action="/todo-form" method="post">
+            <label id="task-label" for="task">Task:</label>
+            <input type="text" id="task" name="task" required>
+            <br>
+            <label id="due-label" for="due">Due:</label>
+            <input type="text" id="due" name="due" required>
+            <br>
+            <div id="to-do-form-submit-button-container">
+                <button id="to-do-form-submit-button" type="submit">Submit</button>
+            </div>
+    
+        </form> 
+    
+    <% } else { %>
+    
+        <h1 id="not-signed-in">To use LifeSync Features you need to sign in!</h1>
+    
+    <% } %>
+    
     
 </div>
     

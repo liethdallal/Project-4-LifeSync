@@ -16,11 +16,11 @@ button {
     border: none;
 }
 #homepagebutton:hover{
-    background-color: #CF8378;
+    background-color: rgb(121, 211, 121);
     transition: background-color 0.3s;
 }
 #loginoutbutton:hover{
-    background-color: #CF8378;
+    background-color: rgb(121, 211, 121);
     transition: background-color 0.3s;
 }
 footer{
@@ -30,7 +30,12 @@ footer{
     width: 100%;
     margin-top: 110px;
 }
-
+#not-signed-in{
+    text-align: center;
+    font-size: 70px;
+    font-family: "Tektur", sans-serif;
+    color: aliceblue;
+}
 /* HomePage Styling Starts here  */
 #loginoutbutton{
     float: right;
@@ -41,7 +46,7 @@ footer{
     border-radius: 10px;
     border: none;
     font-family: "Tektur", sans-serif;
-
+    background-color: aquamarine;
 }
 #lifesync-title{
     margin:0px;
@@ -66,6 +71,7 @@ footer{
     border-radius: 10px;
     border: none;
     font-family: "Tektur", sans-serif;
+    background-color: aquamarine;
 
 }
 #homepage-flex-container{
@@ -129,7 +135,7 @@ margin-top: 110px;
 }
 #to-do-container{
     width: 1200px;
-    height: 1000px;
+    min-height: 1000px;
     background-color: #BB3957;
     margin-top: 110px;
 }
@@ -163,11 +169,15 @@ margin-top: 110px;
     font-family: "Tektur", sans-serif;
     font-size: 25px;
     margin: 0px;
+    background-color: aliceblue;
+
 }
 .due{
     font-family: "Tektur", sans-serif;
     font-size: 25px;
     margin: 0px;
+    background-color: aliceblue;
+
 }
 .delete-button{
     width: 170px;
@@ -208,8 +218,9 @@ margin-top: 110px;
 }
 .task-containers{
     height: 50px;
-    width: 200px;
+    width: 300px;
     margin: 0px;
+    text-align: center;
 }
 #not-signed-in{
     text-align: center;
