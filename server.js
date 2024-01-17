@@ -15,6 +15,7 @@ const indexRouter = require('./controllers/indexcontroller')
 const userRouter = require('./controllers/usercontroller')
 const movieRouter = require('./controllers/moviecontroller')
 const todoRouter = require('./controllers/todocontroller')
+const videogameRouter = require('./controllers/videogamecontroller')
 const PORT = process.env.PORT 
 
 
@@ -62,6 +63,8 @@ app.use('/', userRouter)
 app.use('/', movieRouter )
 
 app.use('/', todoRouter)
+
+app.use('/', videogameRouter)
 //Main Routes 
 
 app.get('/', (req, res) => {
@@ -81,10 +84,6 @@ app.get('/nutrition-manager', (req, res) => (
 //Create A Form Routes 
 
 
-
-app.get('/videogame-form', (req, res) => (
-  res.render('gameform')
-))
 
 app.get('/movie-form', (req, res) => (
   res.render('movieform')
