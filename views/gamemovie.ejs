@@ -1,9 +1,57 @@
-<div id="gamebox">
-    <form action="/videogame-form" method="get">
+<% if (user) { %>
+    <% movies.forEach(movie => { %>
+        <% if (movie.addedBy.toString() === currentUser._id.toString()) { %>
+            <div class="task-div">
+                <form action="/removemovie/<%= movie._id %>" method="post">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <div class="task-containers">
+                        <button class="delete-button" type="submit">Delete</button>
+                    </div>
+                </form>
+                <div class="task-containers">
+                    <h2 class="task"><%= movie.title %></h2>
+                </div>
+                <div class="task-containers">
+                    <img src="<%= movie.img %>" alt="poster"> Corrected syntax here
+                </div>
+            </div>
+        <% } %>
+    <% }); %>
+
+    <form action="/movie-form" method="get">
         <div class='addtask'>
             <div class="task-containers">
                 <button id="add-task-button" type="submit">Add Task</button>
             </div>
         </div>
     </form>
-</div>
+
+    <% games.forEach(game => { %>
+        <% if (game.addedBy.toString() === currentUser._id.toString()) { %>
+            <div class="task-div">
+                <form action="/removegame/<%= game._id %>" method="post">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <div class="task-containers">
+                        <button class="delete-button" type="submit">Delete</button>
+                    </div>
+                </form>
+                <div class="task-containers">
+                    <h2 class="task"><%= game.title %></h2>
+                </div>
+                <div class="task-containers">
+                    <img src="<%= game.img %>" alt="poster"> 
+                </div>
+            </div>
+        <% } %>
+    <% }); %>
+
+    <div id="gamebox">
+        <form action="/videogame-form" method="get">
+            <div class='addtask'>
+                <div class="task-containers">
+                    <button id="add-task-button" type="submit">Add Task</button>
+                </div>
+            </div>
+        </form>
+    </div>
+<% } %> 

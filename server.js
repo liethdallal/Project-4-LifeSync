@@ -1,5 +1,4 @@
 const express = require('express')
-const mongoose = require('./connections/connection')
 const passport = require('passport')
 require('./connections/passport')
 const app = express()
@@ -13,9 +12,8 @@ const bodyParser = require('body-parser')
 const ejsLayouts = require('express-ejs-layouts')
 const indexRouter = require('./controllers/indexcontroller')
 const userRouter = require('./controllers/usercontroller')
-const movieRouter = require('./controllers/moviecontroller')
 const todoRouter = require('./controllers/todocontroller')
-const videogameRouter = require('./controllers/videogamecontroller')
+const gameMovieController = require('./controllers/gamemoviecontroller')
 const PORT = process.env.PORT 
 
 
@@ -60,20 +58,16 @@ app.use('/', indexRouter)
 
 app.use('/', userRouter)
 
-app.use('/', movieRouter )
-
 app.use('/', todoRouter)
 
-app.use('/', videogameRouter)
+app.use('/', gameMovieController)
 //Main Routes 
 
 app.get('/', (req, res) => {
     res.render('homepage')
 })
 
-app.get('/videogames-movies-list', (req, res) => (
-  res.render('gamemovie')
-))
+
 app.get('/finance-manager', (req, res) => (
   res.render('finance')
 ))
@@ -83,11 +77,6 @@ app.get('/nutrition-manager', (req, res) => (
 
 //Create A Form Routes 
 
-
-
-app.get('/movie-form', (req, res) => (
-  res.render('movieform')
-))
 
 app.get('/subscription-form', (req, res) => (
   res.render('subscriptionform')

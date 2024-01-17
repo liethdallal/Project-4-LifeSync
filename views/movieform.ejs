@@ -1,10 +1,27 @@
-<h1 id='newmovie'>Add New Movie</h1>
-<div class='container'>
-    <div class='newMovieForm'>
-        <form action='/movie-form' method='POST'>
-            <input type='text' id='title' name='title' placeholder='Title' required>
-            <input type='text' id='img' name='img' placeholder='Image Url' required>
-            <button id='add-movie' type='submit'>Add Movie</button>
-        </form>
-    </div>
+<div id="to-do-form-container">
+    
+    <h1 id="to-do-form-title">Movie Form</h1>
+
+    <% if (user) { %>
+
+        <form action="/movie-form" method="post">
+            <label id="task-label" for="title">Movie Title:</label>
+            <input type="text" id="title" name="title" required>
+            <br>
+            <label id="due-label" for="img">Image Url:</label>
+            <input type="text" id="img" name="img" required>
+            <br>
+            <div id="to-do-form-submit-button-container">
+                <button id="to-do-form-submit-button" type="submit">Submit</button>
+            </div>
+    
+        </form> 
+    
+    <% } else { %>
+    
+        <h1 id="not-signed-in">To use LifeSync Features you need to sign in!</h1>
+    
+    <% } %>
+    
+    
 </div>

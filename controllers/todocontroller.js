@@ -7,8 +7,7 @@ const User = require('../models/usermodel');
 
 router.post('/todo-form', async (req, res) => {
     try {
-      const { task, due } = req.body;
-      
+      const { task, due } = req.body; 
       const addedBy = req.user._id;
   
       const newTodo = new Todo({ task, due, addedBy });
