@@ -10,6 +10,6 @@ router.get('/auth/google', indexController.login)
   // OAuth logout route
   router.get('/logout', indexController.logout)
 
-  router.get('/homepage', indexController.homepage)
+  router.get('/', indexController.homepage)
 
   module.exports = router

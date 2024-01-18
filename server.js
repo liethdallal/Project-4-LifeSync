@@ -58,6 +58,8 @@ app.use('/', indexRouter)
 
 app.use('/users', userRouter)
 
+app.use('/todos', todoRouter)
+
 
 
 

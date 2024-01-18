@@ -1,11 +1,9 @@
-const express = require('express');
-const router = express.Router();
 const Todo = require('../models/todomodel');
 const User = require('../models/usermodel');
 
 
 
-router.post('/todo-form', async (req, res) => {
+async function postTask(req, res) {
     try {
       const { task, due } = req.body; 
       const addedBy = req.user._id;
@@ -18,16 +16,16 @@ router.post('/todo-form', async (req, res) => {
       user.lists.toDo.push(savedTodo);
       await user.save();
   
-      res.redirect('todo-scheduler');
+      res.redirect('/todos/todo-scheduler');
     } catch (error) {
       res.status(500).json({ error: error.message });
     }
-  });
+  };
 
 
 
 
-  router.post('/remove/:taskId', async (req, res) => {
+  async function deleteTask(req, res) {
     try {
 
   
@@ -46,18 +44,18 @@ router.post('/todo-form', async (req, res) => {
       await req.user.save();
   
 
-      res.redirect('/todo-scheduler');
+      res.redirect('/todos/todo-scheduler');
 
       
     } catch (error) {
       console.error(error);
       res.status(500).json({ error: 'Internal Server Error' });
     }
-  });
+  };
 
 
 
-  router.get('/todo-scheduler', async (req, res) => {
+  async function displayToDoPage(req, res) {
     try {
       const todos = await Todo.find();
 
@@ -70,11 +68,12 @@ router.post('/todo-form', async (req, res) => {
     } catch (error) {
       res.status(500).json({ error: error.message });
     }
-  });
+  };
 
 
-  router.get('/todo-form', (req, res) => (
-    res.render('todoform')
-  ))
+function displayToDoForm(req, res){
+  res.render('todoform')
+}
 
-  module.exports = router;
+
+module.exports = {postTask, deleteTask, displayToDoPage, displayToDoForm};

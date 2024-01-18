@@ -8,7 +8,7 @@ function login(req, res) {
 // Callback after Google has authenticated the user
 function callBack(req, res) {
   passport.authenticate('google', {
-    successRedirect: '/homepage',
+    successRedirect: '/',
     failureRedirect: '/error'
   })(req, res);
 }
@@ -20,7 +20,7 @@ function logout(req, res) {req.logout((err) => {
     return res.redirect('/error'); // Redirect to an error page
   }
   
-  res.redirect('/homepage');
+  res.redirect('/');
 });
 }
 
