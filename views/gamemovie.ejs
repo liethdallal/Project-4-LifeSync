@@ -21,7 +21,7 @@
     <form action="/movie-form" method="get">
         <div class='addtask'>
             <div class="task-containers">
-                <button id="add-task-button" type="submit">Add Task</button>
+                <button id="add-task-button" type="submit">Add Movie</button>
             </div>
         </div>
     </form>
@@ -44,14 +44,16 @@
             </div>
         <% } %>
     <% }); %>
-
+        
     <div id="gamebox">
         <form action="/videogame-form" method="get">
             <div class='addtask'>
                 <div class="task-containers">
-                    <button id="add-task-button" type="submit">Add Task</button>
+                    <button id="add-task-button" type="submit">Add Game</button>
                 </div>
             </div>
         </form>
     </div>
-<% } %> 
+    <% } else { %>
+        <h1 id="not-signed-in">To use LifeSync Features you need to sign in!</h1>
+<% } %>

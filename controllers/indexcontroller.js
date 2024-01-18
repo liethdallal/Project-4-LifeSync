@@ -1,35 +1,32 @@
-const router = require('express').Router()
-const passport = require('passport')
+const passport = require('passport');
 
-//If i reach my stretch goal i will put this into effect
-// router.get('/', function(req, res) {
-//   res.redirect('/profile')
-// })
+// Redirect to Google for authentication
+function login(req, res) {
+  passport.authenticate('google', { scope: ['profile', 'email'] })(req, res);
+}
 
-router.get('/auth/google', passport.authenticate(
-  'google',
-  { scope: ['profile', 'email'] }
-))
-
-
-// Google OAuth callback route
-router.get('/oauth2callback', passport.authenticate(
-  'google',
-  {
-    successRedirect : '/',
-    failureRedirect : '/'
-  }
-))
+// Callback after Google has authenticated the user
+function callBack(req, res) {
+  passport.authenticate('google', {
+    successRedirect: '/homepage',
+    failureRedirect: '/error'
+  })(req, res);
+}
 
 // OAuth logout route
-router.get('/logout', function(req, res) {
-    req.logout(function(err) {
-      if (err) {
-        res.redirect('/error')
-      } else {
-        res.redirect('/')
-      }
-    })
-  })
+function logout(req, res) {req.logout((err) => {
+  if (err) {
+    console.error(err);
+    return res.redirect('/error'); // Redirect to an error page
+  }
+  
+  res.redirect('/homepage');
+});
+}
 
-module.exports = router
+// Render homepage
+function homepage(req, res) {
+  res.render('homepage');
+}
+
+module.exports = { login, callBack, logout, homepage };

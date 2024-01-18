@@ -258,7 +258,6 @@ margin-top: 110px;
 }
 #due-label{
     color: aqua;
-    margin-right: 40px;
     font-size: 40px;
     font-family: "Tektur", sans-serif;
 
@@ -289,11 +288,6 @@ margin-top: 110px;
     color: aqua;
     font-family: "Tektur", sans-serif;
 }
-/* Formsa styling ends here  */
+/* Forms styling ends here  */
 
-/* Videogame styling starts here  */
-#gamebox{
-    width: 200px;
-    height: 150px;
-    background-color: #dadada;
-}
+/* Videogame and Movie styling starts here  */
