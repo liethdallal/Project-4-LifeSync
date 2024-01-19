@@ -14,6 +14,7 @@ const indexRouter = require('./routes/indexrouter')
 const userRouter = require('./routes/userrouter')
 const todoRouter = require('./routes/todorouter')
 const videogameRouter = require('./routes/videogamesrouter')
+const movieRouter = require('./routes/movierouter')
 const PORT = process.env.PORT 
 
 
@@ -60,6 +61,9 @@ app.use('/users', userRouter)
 
 app.use('/todos', todoRouter)
 
+app.use('/videogames-movies', videogameRouter)
+
+app.use('/videogames-movies', movieRouter)
 
 
 

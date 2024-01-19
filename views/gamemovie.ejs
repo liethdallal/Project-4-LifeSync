@@ -2,7 +2,7 @@
     <% movies.forEach(movie => { %>
         <% if (movie.addedBy.toString() === currentUser._id.toString()) { %>
             <div class="task-div">
-                <form action="/removemovie/<%= movie._id %>" method="post">
+                <form action="/videogames-movies/removemovie/<%= movie._id %>" method="post">
                     <input type="hidden" name="_method" value="DELETE">
                     <div class="task-containers">
                         <button class="delete-button" type="submit">Delete</button>
@@ -18,7 +18,7 @@
         <% } %>
     <% }); %>
 
-    <form action="/movie-form" method="get">
+    <form action="/videogames-movies/movie-form" method="get">
         <div class='addtask'>
             <div class="task-containers">
                 <button id="add-task-button" type="submit">Add Movie</button>
@@ -29,7 +29,7 @@
     <% games.forEach(game => { %>
         <% if (game.addedBy.toString() === currentUser._id.toString()) { %>
             <div class="task-div">
-                <form action="/removegame/<%= game._id %>" method="post">
+                <form action="/videogames-movies/removegame/<%= game._id %>" method="post">
                     <input type="hidden" name="_method" value="DELETE">
                     <div class="task-containers">
                         <button class="delete-button" type="submit">Delete</button>
@@ -46,7 +46,7 @@
     <% }); %>
         
     <div id="gamebox">
-        <form action="/videogame-form" method="get">
+        <form action="/videogames-movies/videogame-form" method="get">
             <div class='addtask'>
                 <div class="task-containers">
                     <button id="add-task-button" type="submit">Add Game</button>
