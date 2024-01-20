@@ -26,9 +26,9 @@ button {
 footer{
     background-color: #7C7777;
     position: absolute;
-    height: 70px;
+    height: 30px;
     width: 100%;
-    margin-top: 110px;
+    bottom: 0;
 }
 #not-signed-in{
     text-align: center;
@@ -78,7 +78,7 @@ footer{
 display: flex;
 justify-content: center;
 align-items: center;
-margin-top: 110px;
+margin-top: 60px;
 }
 #homepage-grid-container{
     display:grid;
@@ -134,10 +134,10 @@ margin-top: 110px;
     align-items: center;
 }
 #to-do-container{
-    width: 1200px;
-    min-height: 1000px;
+    width: 95%;
+    min-height: 1100px;
     background-color: #BB3957;
-    margin-top: 110px;
+    margin-top: 30px;
 }
 #task-due-container{
     display: flex;
@@ -171,7 +171,7 @@ margin-top: 110px;
     margin: 0px;
     min-height: 60px;
     background-color: aliceblue;
-
+    border-radius: 10px;
 }
 .due{
     font-family: "Tektur", sans-serif;
@@ -179,6 +179,8 @@ margin-top: 110px;
     margin: 0px;
     min-height: 60px;
     background-color: aliceblue;
+    border-radius: 10px;
+
 
 }
 .delete-button{
@@ -293,3 +295,73 @@ margin-top: 110px;
 /* Forms styling ends here  */
 
 /* Videogame and Movie styling starts here  */
+#gamemovie-flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#gamemovie-container{
+    width: 95%;
+    min-height: 1100px;
+    background-color: #D6A149;
+    margin-top: 30px;
+}
+#center-box-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#movies-container-flexbox{ 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.movie-pic{
+width: 200px;
+height:280px;
+background-color: #dadada;
+
+}
+.movie-title-container{
+    width: 200px;
+    min-height: 80px;
+    text-align: center;
+    border-radius: 10px;
+
+}
+.movie-title{
+    margin: 0px;
+    font-family: "Tektur", sans-serif;
+}
+.movie-delete-button{
+    width: 200px;
+    height: 50px;
+    font-size: 30px;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-family: "Tektur", sans-serif;
+
+}
+.movie-delete-button:hover{
+    background-color: crimson;
+    transition: background-color 0.3s;
+}
+#add-game-movie{
+    width: 150px;
+    height: 50px;
+    font-size: 25px;
+    border-radius: 10px;
+    margin-top: 10px;
+    font-family: "Tektur", sans-serif;
+    margin-bottom: 30px;
+}
+#add-game-movie:hover{
+    background-color: yellowgreen;
+    transition: background-color 0.3s;
+}
+#gamemovietitles{
+    margin: 10px;
+}

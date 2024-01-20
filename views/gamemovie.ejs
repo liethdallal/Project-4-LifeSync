@@ -1,19 +1,75 @@
-<% if (user) { %>
-    <% movies.forEach(movie => { %>
-        <% if (movie.addedBy.toString() === currentUser._id.toString()) { %>
+<div id="gamemovie-flex">
 
-        <% } %>
+    <div id="gamemovie-container">
 
-    <% }); %>
+        <div id="center-box-div">
+        <hr id="todoline">
+        <h1 id="gamemovietitles">Videogames List </h1>
+        <a href="/videogames-movies/videogame-form"><button id="add-game-movie">Add Game</button></a>
+        <hr id="todoline">
+        </div>
 
-    <% games.forEach(game => { %>
-        <% if (game.addedBy.toString() === currentUser._id.toString()) { %>
+        <% if (user) { %>
+            <div id="movies-container-flexbox">
+        <% games.forEach(game => { %>
+            <% if (game.addedBy.toString() === currentUser._id.toString()) { %>
+                <div id="movies-container">
+                    <img class="movie-pic" src="<%= game.img %>" alt="Game Poster">
+                    <div class="movie-title-container">
+                        <h2 class="movie-title" ><%= game.title %></h2>
+                    </div>
+                    <form action="/videogames-movies/removegame/<%= game._id %>" method="post">
+                        <input type="hidden" name="_method" value="DELETE">
+                            <button class="movie-delete-button" type="submit">Delete</button>
+                    </form>
+                </div>
+           
+           
 
-        <% } %>
-        
-    <% }); %>
-        
+            <% } %>
 
-    <% } else { %>
+        <% }); %>
+    </div>
+
+        <% } else { %>
         <h1 id="not-signed-in">To use LifeSync Features you need to sign in!</h1>
-<% } %>
+        <% } %>
+
+        <hr id="todoline">
+
+        <div id="center-box-div">
+            <h1 id="gamemovietitles">Movies List</h1>
+            <a href="/videogames-movies/movie-form"><button id="add-game-movie">Add Movie</button></a>
+        <hr id="todoline">
+
+        </div>          
+
+        <% if (user) { %>
+            <div id="movies-container-flexbox">
+        <% movies.forEach(movie => { %>
+            <% if (movie.addedBy.toString() === currentUser._id.toString()) { %>
+
+                <div id="movies-container">
+                    <img class="movie-pic" src="<%= movie.img %>" alt="Movie Poster">
+                    <div class="movie-title-container">
+                        <h2 class="movie-title" ><%= movie.title %></h2>
+                    </div>
+                    <form action="/videogames-movies/removemovie/<%= movie._id %>" method="post">
+                        <input type="hidden" name="_method" value="DELETE">
+                            <button class="movie-delete-button" type="submit">Delete</button>
+                    </form>
+                </div>
+
+            
+                <% } %>
+            
+                <% }); %>
+            </div>
+                
+        <% } else { %>
+            <h1 id="not-signed-in">To use LifeSync Features you need to sign in!</h1>
+            <% } %>
+            
+
+    </div>
+</div>

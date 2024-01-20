@@ -57,8 +57,6 @@ async function getVideogamesAndMoviesPage(req,res){
     const movies = await Movie.find();
     const currentUser = req.user;
 
-    console.log(games);
-    console.log(movies);
 
     res.render('gamemovie', { games, movies, currentUser });
 
