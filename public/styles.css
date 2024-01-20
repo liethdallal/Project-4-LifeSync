@@ -155,7 +155,7 @@ margin-top: 110px;
     margin: 0px;
 }
 #todoline{
-    width: 85%;
+    width: 95%;
     border: none;
     height: 20px;
     background-color: black;
@@ -169,6 +169,7 @@ margin-top: 110px;
     font-family: "Tektur", sans-serif;
     font-size: 25px;
     margin: 0px;
+    min-height: 60px;
     background-color: aliceblue;
 
 }
@@ -176,6 +177,7 @@ margin-top: 110px;
     font-family: "Tektur", sans-serif;
     font-size: 25px;
     margin: 0px;
+    min-height: 60px;
     background-color: aliceblue;
 
 }
@@ -238,13 +240,13 @@ margin-top: 110px;
 }
 #task{
     margin: 20px;
-    height: 70px;
+    min-height: 70px;
     font-size:50px ;
     font-family: "Tektur", sans-serif;
 
 }
 #due{
-    height: 70px;
+    min-height: 70px;
     font-size:50px ;
     font-family: "Tektur", sans-serif;
 

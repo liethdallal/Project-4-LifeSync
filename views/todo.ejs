@@ -17,7 +17,6 @@
             
         </div>
         <hr id="todoline">
-
         <% if (user) { %>
             <% todos.forEach(todo => { %>
                 <% if (todo.addedBy.toString() === currentUser._id.toString()) { %>
