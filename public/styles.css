@@ -159,6 +159,7 @@ margin-top: 60px;
     border: none;
     height: 20px;
     background-color: black;
+    margin-top: 20px;
 }
 .task-div{
     display: flex;
@@ -213,6 +214,8 @@ margin-top: 60px;
     font-size:30px ;
     font-family: "Tektur", sans-serif;
     border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 
 }
 .addtask{
@@ -311,6 +314,7 @@ margin-top: 60px;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background-color: orange;
 }
 #movies-container-flexbox{ 
     display: flex;
@@ -322,6 +326,7 @@ margin-top: 60px;
 width: 200px;
 height:280px;
 background-color: #dadada;
+margin-top: 10px;
 
 }
 .movie-title-container{
@@ -356,7 +361,7 @@ background-color: #dadada;
     border-radius: 10px;
     margin-top: 10px;
     font-family: "Tektur", sans-serif;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 #add-game-movie:hover{
     background-color: yellowgreen;
@@ -365,3 +370,4 @@ background-color: #dadada;
 #gamemovietitles{
     margin: 10px;
 }
+/* Videogame and Movie styling ends here  */

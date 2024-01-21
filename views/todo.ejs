@@ -4,7 +4,9 @@
         <div id="task-due-container">
 
             <div class="task-containers">
-                <h1 id="add-delete">Add/Delete</h1>
+                <form action="/todos/todo-form" method="get">
+                    <button id="add-task-button" type="submit">Add Task</button>
+                </form>
             </div>
             
             <div class="task-containers">
@@ -36,24 +38,26 @@
                     </div>
                 <% } %>
             <% }); %>
-            <form action="/todos/todo-form" method="get">
-                <div class='addtask'>
-                    <div class="task-containers">
-                        <button id="add-task-button" type="submit">Add Task</button>
-                    </div>
-                    <div class="task-containers">
-                        <h1 class="task">-----------</h1>
-                    </div>
-                    <div class="task-containers">
-                        <h1 class="due">-------------</h1>
-                    </div>
-                </div>
-            </form>
+
         <% } else { %>
             <h1 id="not-signed-in">To use LifeSync Features you need to sign in!</h1>
         <% } %>
 
-
+        <% if(user){ %>
+        <% if(currentUser.lists.toDo.length ==  0){ %>
+            <div class='addtask'>
+                <div class="task-containers">
+                    <button class="delete-button" type="submit">e.g. Delete</button>
+                </div>
+                <div class="task-containers">
+                    <h1 class="task">-----------</h1>
+                </div>
+                <div class="task-containers">
+                    <h1 class="due">-------------</h1>
+                </div>
+            </div>
+        <% } %>
+            <% } %>
     </div>
 
 </div>
