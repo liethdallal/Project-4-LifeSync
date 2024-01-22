@@ -79,6 +79,8 @@ display: flex;
 justify-content: center;
 align-items: center;
 margin-top: 60px;
+margin-bottom: 60px;
+
 }
 #homepage-grid-container{
     display:grid;
@@ -190,6 +192,7 @@ margin-top: 60px;
     font-size: 30px;
     font-family: "Tektur", sans-serif;
     border-radius: 10px;
+    background-color: rgb(207, 153, 153);
 
 }
 .delete-button:hover{
@@ -216,7 +219,7 @@ margin-top: 60px;
     border-radius: 10px;
     margin-top: 10px;
     margin-bottom: 10px;
-
+    background-color: rgb(135, 194, 135);
 }
 .addtask{
     display: flex;
@@ -348,7 +351,7 @@ margin-top: 10px;
     margin-top: 10px;
     margin-bottom: 20px;
     font-family: "Tektur", sans-serif;
-
+    background-color: rgb(201, 103, 103);
 }
 .movie-delete-button:hover{
     background-color: crimson;
@@ -362,6 +365,8 @@ margin-top: 10px;
     margin-top: 10px;
     font-family: "Tektur", sans-serif;
     margin-bottom: 20px;
+    background-color: rgb(135, 194, 135);
+
 }
 #add-game-movie:hover{
     background-color: yellowgreen;
