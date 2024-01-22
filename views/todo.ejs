@@ -1,36 +1,41 @@
 <div id="to-do-flexbox">
 
-    <table>
-        <thead>
-            <tr>
-                <th>
+    <div id="to-do-container">
+        <div id="task-due-container">
+
+            <div class="task-containers">
                 <form action="/todos/todo-form" method="get">
-                <button id="add-task-button" type="submit">Add Task</button>
-                </form></th>
-                <th>Tasks</th>
-                <th>Due Date</th>
-            </tr>
-        </thead>
+                    <button id="add-task-button" type="submit">Add Task</button>
+                </form>
+            </div>
+            
+            <div class="task-containers">
+                <h1 id="tasks-title">Tasks</h1>
+            </div>
+
+            <div class="task-containers">
+                <h1 id="due-title">Due Date</h1>
+            </div>
+            
+        </div>
+        <hr id="todoline">
         <% if (user) { %>
             <% todos.forEach(todo => { %>
                 <% if (todo.addedBy.toString() === currentUser._id.toString()) { %>
-                    <tbody>
-                        <tr>
-                            <td>
-                                <form action="/todos/remove/<%= todo._id %>" method="post">
-                                    <input type="hidden" name="_method" value="DELETE">
-                                    <button class="delete-button" type="submit">Delete</button>
-                                </form> 
-                            </td>
-                            <td><%= todo.task %></td>
-                            <td><%= todo.due %></td>
-                        </tr>
-                        <tr>
-                            <td>Data 4</td>
-                            <td>Data 5</td>
-                            <td>Data 6</td>
-                        </tr>
-                    </tbody>
+                    <div class="task-div">
+                        <form action="/todos/remove/<%= todo._id %>" method="post">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <div class="task-containers">
+                                <button class="delete-button" type="submit">Delete</button>
+                            </div>
+                        </form>
+                        <div class="task-containers">
+                            <h2 class="task"><%= todo.task %></h2>
+                        </div>
+                        <div class="task-containers">
+                            <h2 class="due"><%= todo.due %></h2>
+                        </div>
+                    </div>
                 <% } %>
             <% }); %>
 
@@ -40,20 +45,19 @@
 
         <% if(user){ %>
         <% if(currentUser.lists.toDo.length ==  0){ %>
-
-            
-
-
-
+            <div class='addtask'>
+                <div class="task-containers">
+                    <button class="delete-button" type="submit">e.g. Delete</button>
+                </div>
+                <div class="task-containers">
+                    <h1 class="task">-----------</h1>
+                </div>
+                <div class="task-containers">
+                    <h1 class="due">-------------</h1>
+                </div>
+            </div>
         <% } %>
             <% } %>
+    </div>
 
-
-  
-            
-            
-            
-    </table>
 </div>
-
-
