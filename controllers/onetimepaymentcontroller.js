@@ -1,4 +1,4 @@
-const Onetimepayment = require('../models/todomodel');
+const Onetimepayment = require('../models/onetimepaymentmodel');
 const User = require('../models/usermodel');
 
 
@@ -8,7 +8,7 @@ async function postOnetimepayment(req, res) {
       const { name, cost } = req.body; 
       const addedBy = req.user._id;
   
-      const newOnetimepayment = newOnetimepayment({ name, cost, addedBy });
+      const newOnetimepayment = new Onetimepayment({ name, cost, addedBy });
       const savedOnetimepayment = await newOnetimepayment.save();
   
 
@@ -39,7 +39,7 @@ async function postOnetimepayment(req, res) {
   
       await Onetimepayment.findByIdAndDelete(nameId);
 
-      userTasks.splice(oneTimePaymentIndex, 1);
+      userOneOnetimepayments.splice(oneTimePaymentIndex, 1);
 
       await req.user.save();
   

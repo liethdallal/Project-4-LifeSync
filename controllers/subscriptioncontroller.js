@@ -1,5 +1,5 @@
 const Subscription = require('../models/subscriptionmodel')
-const Onetimepayment = require('../models/todomodel');
+const Onetimepayment = require('../models/onetimepaymentmodel');
 const User = require('../models/usermodel');
 
 
@@ -40,7 +40,7 @@ async function postSubscription(req, res) {
   
       await Subscription.findByIdAndDelete(nameId);
 
-      userTasks.splice(subscriptionIndex, 1);
+      userSubscriptions.splice(subscriptionIndex, 1);
 
       await req.user.save();
   
