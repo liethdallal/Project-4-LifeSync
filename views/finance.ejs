@@ -1,45 +1,54 @@
+<div id="finance-flex-box-container">
+    <div id="finance-complete-container">
+        <div id="conatiners-withincontainer-flexbox">
+            <div id="sub-div">
+                <a href="/finance-costs/subscription-form"><button id="add-finance-button">Add Subscription</button></a>
 
-        <a href="/finance-costs/subscription-form"><button id="add-finance-button">Add Subscription</button></a>
+                <% if (user) { %>
 
-        <% if (user) { %>
+                <% subscriptions.forEach(subscription => { %>
+                <% if (subscription.addedBy.toString() === currentUser._id.toString()) { %>
 
-        <% subscriptions.forEach(subscription => { %>
-            <% if (subscription.addedBy.toString() === currentUser._id.toString()) { %>
-
-
-
-                <% } %>
-        <% }); %>
-
-        <% } else { %>
-            <h1 id="not-signed-in">To use LifeSync Features you need to sign in!</h1>
-
-        <% } %>
-        <% if(user){ %>
-        <% if(currentUser.lists.subscriptions.length == 0) {%>
-
-        <% } %>
-        <% } %>
-
-        <a href="/finance-costs/onetimepayment-form"><button id="add-finance-button">Add Onetimepayment</button></a>
-
-        <% if (user) { %>
-        <% onetimepayments.forEach(onetimepayment => { %>
-            <% if (onetimepayment.addedBy.toString() === currentUser._id.toString()) { %>
 
 
                 <% } %>
                 <% }); %>
+
+                <% } else { %>
+                    <h1 id="not-signed-in">To use LifeSync Features you need to sign in!</h1>
+
+                <% } %>
+                <% if(user){ %>
+                <% if(currentUser.lists.subscriptions.length == 0) {%>
+
+                <% } %>
+                <% } %>
+
+            </div>
+
+            <div id="onetimediv">
+                <a href="/finance-costs/onetimepayment-form"><button id="add-finance-button">Add Onetimepayment</button></a>
+
+                <% if (user) { %>
+                <% onetimepayments.forEach(onetimepayment => { %>
+                    <% if (onetimepayment.addedBy.toString() === currentUser._id.toString()) { %>
+
+
+                    <% } %>
+                    <% }); %>
        
-        <% } else { %>
-            <h1 id="not-signed-in">To use LifeSync Features you need to sign in!</h1>
-            <% } %>
+                <% } else { %>
+                    <h1 id="not-signed-in">To use LifeSync Features you need to sign in!</h1>
+                <% } %>
             
-            <% if(user){ %>
-            <% if(currentUser.lists.oneTimePayments.length == 0) {%>
+                <% if(user){ %>
+                <% if(currentUser.lists.oneTimePayments.length == 0) {%>
 
 
-            <% } %>
-            <% } %>
+                <% } %>
+                <% } %>
+            </div>
+        </div>
+    </div>
 
-
+</div>

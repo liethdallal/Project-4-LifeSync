@@ -376,3 +376,25 @@ margin-top: 10px;
     margin: 10px;
 }
 /* Videogame and Movie styling ends here  */
+/* Finance styling starts here  */
+#finance-flex-box-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#finance-complete-container{
+    min-width: 95%;
+    min-height: 1100px;
+    margin-top: 30px;
+    background-color: #614689;
+}
+#conatiners-withincontainer-flexbox{
+    display: flex;
+    gap: 190px;
+}
+#sub-div{
+
+}
+#onetimediv{
+
+}
