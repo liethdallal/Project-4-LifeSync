@@ -4,7 +4,7 @@ const subscriptionController = require('../controllers/subscriptioncontroller')
 
 router.post('/subscription-form', subscriptionController.postSubscription);
 
-router.post('/remove/:subscriptionId', subscriptionController.deleteSubscription)
+router.post('/removesub/:subscriptionId', subscriptionController.deleteSubscription)
 
 
 router.get('/finance-manager', subscriptionController.getFinancePage)

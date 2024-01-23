@@ -31,19 +31,21 @@ async function postOnetimepayment(req, res) {
   
       const onetimepaymentId = req.params.onetimepaymentId;
 
-      const userOneOnetimepayments = req.user.lists.oneTimePayments;
+      const userOnetimepayments = req.user.lists.oneTimePayments;
 
-      const oneTimePaymentIndex = userOneOnetimepayments.findIndex(onetimepayment =>onetimepayment._id ===onetimepaymentId);
+      const oneTimePaymentIndex = userOnetimepayments.findIndex(onetimepayment =>onetimepayment._id ===onetimepaymentId);
 
       
   
-      await Onetimepayment.findByIdAndDelete(nameId);
+      await Onetimepayment.findByIdAndDelete(onetimepaymentId);
 
-      userOneOnetimepayments.splice(oneTimePaymentIndex, 1);
+      userOnetimepayments.splice(oneTimePaymentIndex, 1);
 
       await req.user.save();
   
+      console.log(`Deleting onetime payment with ID: ${onetimepaymentId}`);
 
+      
       res.redirect('/finance-costs/finance-manager');
 
       

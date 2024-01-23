@@ -4,7 +4,7 @@ const onetimepaymentController = require('../controllers/onetimepaymentcontrolle
 
 router.post('/onetimepayment-form', onetimepaymentController.postOnetimepayment);
 
-router.post('/remove/:onetimepaymentId', onetimepaymentController.deleteOnetimepayment)
+router.post('/removeonetime/:onetimepaymentId', onetimepaymentController.deleteOnetimepayment)
 
 router.get('/onetimepayment-form', onetimepaymentController.displayOnetimepaymentForm)
 

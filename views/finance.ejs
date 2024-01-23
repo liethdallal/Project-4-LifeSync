@@ -2,13 +2,31 @@
     <div id="finance-complete-container">
         <div id="conatiners-withincontainer-flexbox">
             <div id="sub-div">
-                <a href="/finance-costs/subscription-form"><button id="add-finance-button">Add Subscription</button></a>
+                <div id="sub-div-header-container">
+
+                    <a href="/finance-costs/subscription-form"><button id="add-finance-button">Add +</button></a>
+                    <h1>Subscriptions</h1>
+                    <h1>Cost</h1>
+                </div>
+                <hr>
+
 
                 <% if (user) { %>
 
                 <% subscriptions.forEach(subscription => { %>
                 <% if (subscription.addedBy.toString() === currentUser._id.toString()) { %>
-
+                    <div id="sub-div-header-container">
+                        <form action="/finance-costs/removesub/<%= subscription._id %>" method="post">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <button class="finance-delete" type="submit">Delete</button>
+                        </form>
+                        <div id="finance-containers">
+                            <h2><%= subscription.name %></h2>
+                        </div>
+                        <div id="finance-containers">
+                            <h2><%= subscription.cost %></h2>
+                        </div>
+                    </div>
 
 
                 <% } %>
@@ -20,19 +38,42 @@
                 <% } %>
                 <% if(user){ %>
                 <% if(currentUser.lists.subscriptions.length == 0) {%>
-
+                    <div id="sub-div-header-container">
+                        <button class="finance-delete" type="submit">Delete</button>
+                        <div id="finance-containers">
+                            <h2>--------</h2>
+                        </div>
+                        <div id="finance-containers">
+                            <h2>--------</h2>
+                        </div>
+                    </div>
                 <% } %>
                 <% } %>
 
             </div>
 
             <div id="onetimediv">
-                <a href="/finance-costs/onetimepayment-form"><button id="add-finance-button">Add Onetimepayment</button></a>
-
+                <div id="sub-div-header-container">
+                    <a href="/finance-costs/onetimepayment-form"><button id="add-finance-button">Add +</button></a>
+                    <h1>One-time-Purchases</h1>
+                    <h1>Cost</h1>
+                </div>
+                <hr>
                 <% if (user) { %>
                 <% onetimepayments.forEach(onetimepayment => { %>
                     <% if (onetimepayment.addedBy.toString() === currentUser._id.toString()) { %>
-
+                        <div id="sub-div-header-container">
+                            <form action="/finance-costs/removeonetime/<%= onetimepayment._id %>" method="post">
+                                <input type="hidden" name="_method" value="DELETE">
+                                <button class="finance-delete" type="submit">Delete</button>
+                            </form>
+                            <div id="finance-containers">
+                                <h2><%= onetimepayment.name %></h2>
+                            </div>
+                            <div id="finance-containers">
+                                <h2><%= onetimepayment.cost %></h2>
+                            </div>
+                        </div>
 
                     <% } %>
                     <% }); %>
@@ -43,7 +84,15 @@
             
                 <% if(user){ %>
                 <% if(currentUser.lists.oneTimePayments.length == 0) {%>
-
+                    <div id="sub-div-header-container">
+                        <button class="finance-delete" type="submit">Delete</button>
+                        <div id="finance-containers">
+                            <h2>--------</h2>
+                        </div>
+                        <div id="finance-containers">
+                            <h2>--------</h2>
+                        </div>
+                    </div>
 
                 <% } %>
                 <% } %>

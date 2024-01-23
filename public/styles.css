@@ -383,18 +383,34 @@ margin-top: 10px;
     justify-content: center;
 }
 #finance-complete-container{
-    min-width: 95%;
+    width: 95%;
     min-height: 1100px;
     margin-top: 30px;
     background-color: #614689;
 }
 #conatiners-withincontainer-flexbox{
     display: flex;
-    gap: 190px;
+    gap: 100px;
+    justify-content: center;
 }
 #sub-div{
-
+border: solid black 5px;
+min-height: 950px;
+width: 600px;
+margin: 20px;
 }
 #onetimediv{
-
+    border: solid black 5px;
+    min-height: 950px;
+    width: 600px;
+    margin: 20px;
+}
+#sub-div-header-container{
+    display: flex;
+    justify-content: space-evenly;
+    align-items:center ;
+}
+#finance-containers{
+    width: 150px;
+    min-height: 80px;
 }

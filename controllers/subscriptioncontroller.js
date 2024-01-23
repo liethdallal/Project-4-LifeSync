@@ -38,7 +38,7 @@ async function postSubscription(req, res) {
 
       
   
-      await Subscription.findByIdAndDelete(nameId);
+      await Subscription.findByIdAndDelete(subscriptionId);
 
       userSubscriptions.splice(subscriptionIndex, 1);
 
