@@ -3,12 +3,15 @@
         <div id="conatiners-withincontainer-flexbox">
             <div id="sub-div">
                 <div id="sub-div-header-container">
-
                     <a href="/finance-costs/subscription-form"><button id="add-finance-button">Add +</button></a>
-                    <h1>Subscriptions</h1>
-                    <h1>Cost</h1>
+                    <div id="finance-containers-headers">
+                        <h1>Subscriptions</h1>
+                    </div>
+                    <div id="finance-containers-headers">
+                        <h1>Cost</h1>
+                    </div>
                 </div>
-                <hr>
+                <hr class="finance-line">
 
 
                 <% if (user) { %>
@@ -27,8 +30,6 @@
                             <h2><%= subscription.cost %></h2>
                         </div>
                     </div>
-
-
                 <% } %>
                 <% }); %>
 
@@ -39,12 +40,12 @@
                 <% if(user){ %>
                 <% if(currentUser.lists.subscriptions.length == 0) {%>
                     <div id="sub-div-header-container">
-                        <button class="finance-delete" type="submit">Delete</button>
+                        <button class="finance-delete" type="submit">"Delete"</button>
                         <div id="finance-containers">
-                            <h2>--------</h2>
+                            <h2>"name of subscription you want or have" </h2>
                         </div>
                         <div id="finance-containers">
-                            <h2>--------</h2>
+                            <h2>"how much you pay (yearly, monthly, etc. you decide)"</h2>
                         </div>
                     </div>
                 <% } %>
@@ -55,10 +56,14 @@
             <div id="onetimediv">
                 <div id="sub-div-header-container">
                     <a href="/finance-costs/onetimepayment-form"><button id="add-finance-button">Add +</button></a>
-                    <h1>One-time-Purchases</h1>
-                    <h1>Cost</h1>
+                    <div id="finance-containers-headers">
+                        <h1>Purchases</h1>
+                    </div>
+                    <div id="finance-containers-headers">
+                        <h1>Cost</h1>
+                    </div>
                 </div>
-                <hr>
+                <hr class="finance-line">
                 <% if (user) { %>
                 <% onetimepayments.forEach(onetimepayment => { %>
                     <% if (onetimepayment.addedBy.toString() === currentUser._id.toString()) { %>
@@ -85,12 +90,12 @@
                 <% if(user){ %>
                 <% if(currentUser.lists.oneTimePayments.length == 0) {%>
                     <div id="sub-div-header-container">
-                        <button class="finance-delete" type="submit">Delete</button>
+                        <button class="finance-delete" type="submit">"Delete"</button>
                         <div id="finance-containers">
-                            <h2>--------</h2>
+                            <h2>"name of purchase you want to make"</h2>
                         </div>
                         <div id="finance-containers">
-                            <h2>--------</h2>
+                            <h2>"cost of that purchase (you decide currency)"</h2>
                         </div>
                     </div>
 

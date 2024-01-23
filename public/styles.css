@@ -374,6 +374,8 @@ margin-top: 10px;
 }
 #gamemovietitles{
     margin: 10px;
+    font-family: "Tektur", sans-serif;
+    font-size: 45px;
 }
 /* Videogame and Movie styling ends here  */
 /* Finance styling starts here  */
@@ -411,6 +413,53 @@ margin: 20px;
     align-items:center ;
 }
 #finance-containers{
-    width: 150px;
+    width: 200px;
     min-height: 80px;
+    background-color: #dadada;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: "Tektur", sans-serif;
+    font-size: 15px;
+}
+#finance-containers-headers{
+    width: 200px;
+    min-height: 80px;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 10px;
+    font-family: "Tektur", sans-serif;
+    font-size: 15px;
+    margin: 0px;
+}
+.finance-delete{
+    width: 100px;
+    height: 50px;
+    font-size: 22px;
+    font-family: "Tektur", sans-serif;
+    border-radius: 10px;
+    background-color: rgb(201, 103, 103);
+}
+.finance-delete:hover{
+    background-color: crimson;
+    transition: background-color 0.3s;
+}
+.finance-line{
+width: 95%;
+height: 5px;
+background-color: black;
+border: none;
+}
+#add-finance-button{
+    width: 100px;
+    height: 50px;
+    border-radius: 10px;
+    font-size: 22px;
+    background-color: yellowgreen;
+
+}
+#add-finance-button:hover{
+    background-color: rgb(135, 194, 135);
+    transition: background-color 0.3s;
 }
