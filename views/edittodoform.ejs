@@ -1,0 +1,23 @@
+<div id="to-do-form-container">
+    <h1 id="to-do-form-title">Edit To-do</h1>
+
+    <% if (user) { %>
+
+        <form action="/todos/edit/<%= taskId %>" method="post">
+            <label id="task-label" for="task">Task:</label>
+            <input type="text" id="task" name="task" value="<%= todo.task %>" required>
+            <br>
+            <label id="due-label" for="due">Due:</label>
+            <input type="text" id="due" name="due" value="<%= todo.due %>" required>
+            <br>
+            <div id="to-do-form-submit-button-container">
+                <button id="to-do-form-submit-button" type="submit">Update Task</button>
+            </div>
+        </form>
+
+    <% } else { %>
+
+        <h1 id="not-signed-in">To use LifeSync Features, you need to sign in!</h1>
+
+    <% } %>
+</div>

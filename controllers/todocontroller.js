@@ -22,7 +22,20 @@ async function postTask(req, res) {
     }
   };
 
-
+  async function updateTask(req, res) {
+    try {
+      const taskId = req.params.taskId;
+      const { task, due } = req.body;
+  
+      // Update the task in the database
+      await Todo.findByIdAndUpdate(taskId, { task, due });
+  
+      res.redirect('/todos/todo-scheduler');
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: 'Internal Server Error' });
+    }
+  }
 
 
   async function deleteTask(req, res) {
@@ -71,10 +84,21 @@ async function postTask(req, res) {
   };
 
   
+  async function displayEditToDoForm(req,res){
+    try {
+      const taskId = req.params.taskId; 
+      const todo = await Todo.findById(taskId);
+      console.log(taskId);
+    res.render('edittodoform', {todo, taskId})
+    }
+    catch (error) {
+      res.status(500).json({ error: error.message });
+    }
+  }
 
 function displayToDoForm(req, res){
   res.render('todoform')
 }
 
 
-module.exports = {postTask, deleteTask, displayToDoPage, displayToDoForm};
+module.exports = {postTask, deleteTask, displayToDoPage, displayToDoForm, displayEditToDoForm, updateTask};

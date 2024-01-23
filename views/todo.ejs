@@ -23,12 +23,21 @@
             <% todos.forEach(todo => { %>
                 <% if (todo.addedBy.toString() === currentUser._id.toString()) { %>
                     <div class="task-div">
-                        <form action="/todos/remove/<%= todo._id %>" method="post">
-                            <input type="hidden" name="_method" value="DELETE">
-                            <div class="task-containers">
-                                <button class="delete-button" type="submit">Delete</button>
-                            </div>
-                        </form>
+                        <div id="edit-delete-div">
+                            <form action="/todos/editform/<%= todo._id %>" method="get">
+                                <div class="task-containers">
+                                    <button class="edit-button" type="submit">Edit</button>
+                                </div>
+                            </form>
+                            
+                            <form action="/todos/remove/<%= todo._id %>" method="post">
+                                <input type="hidden" name="_method" value="DELETE">
+                                <div class="task-containers">
+                                    <button class="delete-button" type="submit">Delete</button>
+                                </div>
+                            </form>
+                        </div>
+
                         <div class="task-containers">
                             <h2 class="task"><%= todo.task %></h2>
                         </div>

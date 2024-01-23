@@ -219,7 +219,7 @@ margin-bottom: 60px;
     border-radius: 10px;
     margin-top: 10px;
     margin-bottom: 10px;
-    background-color: rgb(135, 194, 135);
+    background-color: rgb(86, 248, 86);
 }
 .addtask{
     display: flex;
@@ -229,13 +229,26 @@ margin-bottom: 60px;
 .task-containers{
     min-height: 50px;
     width: 300px;
-    margin: 0px;
+    margin: 10px;
     text-align: center;
 }
 #not-signed-in{
     text-align: center;
     font-size: 70px;
     font-family: "Tektur", sans-serif;
+}
+
+.edit-button{
+    width: 170px;
+    height: 50px;
+    font-size: 30px;
+    font-family: "Tektur", sans-serif;
+    border-radius: 10px;
+    background-color: rgb(135, 194, 135);
+}
+.edit-button:hover{
+    background-color:yellowgreen;
+    transition: background-color 0.3s;
 }
 /* To-do Styling ends here  */
 
@@ -247,18 +260,21 @@ margin-bottom: 60px;
     margin-top: 70px;
 }
 #task{
-    margin: 20px;
-    min-height: 70px;
-    font-size:50px ;
+    height: 70px;
+    width: 950px;
+    font-size:30px ;
     font-family: "Tektur", sans-serif;
 
 }
 #due{
-    min-height: 70px;
-    font-size:50px ;
+    height: 70px;
+    width: 950px;
+    font-size:30px ;
     font-family: "Tektur", sans-serif;
 
 }
+
+
 #task-label{
     color: aqua;
     margin-right: 0px;
@@ -365,7 +381,7 @@ margin-top: 10px;
     margin-top: 10px;
     font-family: "Tektur", sans-serif;
     margin-bottom: 20px;
-    background-color: rgb(135, 194, 135);
+    background-color: rgb(86, 248, 86);
 
 }
 #add-game-movie:hover{

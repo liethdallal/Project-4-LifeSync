@@ -3,6 +3,7 @@ const Schema = mongoose.Schema
 
 const NutritionSchema = new mongoose.Schema({
     name: {type: String, required: true},
+    servingsize: {type: String, required: true},
     calories: {type: Number, required: true},
     sodium: {type: Number, required: true},
     sugar: {type: Number, required: true},
