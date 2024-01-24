@@ -3,7 +3,7 @@
 
     <% if (user) { %>
 
-        <form action="/finance-costs/editsubform/<%= subscription._id %>" method="post">
+        <form action="/finances/editsubform/<%= subscription._id %>" method="post">
             <label id="task-label" for="task">Name:</label>
             <input type="text" id="task" name="name" value="<%= subscription.name %>" required>
             <br>

@@ -10,7 +10,7 @@
                 <% games.forEach(game => { %>
                     <% if (game.addedBy.toString() === currentUser._id.toString()) { %>
                         <div id="movies-container">
-                            <img class="movie-pic" src="<%= game.img %>" alt="Game Poster">
+                            <img class="movie-pic" src="<%= game.img %>" alt="Edit and try another online image url">
                             <div class="movie-title-container">
                                 <h2 class="movie-title"><%= game.title %></h2>
                             </div>
@@ -77,7 +77,7 @@
             <% if (user) { %>
                 <% if (currentUser.lists.movies.length == 0) { %>
                     <div id="movies-container">
-                        <img class="movie-pic" src="/imgs/movie-example.jpg" alt="MoviePoster">
+                        <img class="movie-pic" src="/imgs/movie-example.jpg" alt="Edit and try another online image url">
                         <div class="movie-title-container">
                             <h2 class="movie-title">"Movie Title"</h2>
                             <div id="buttondiv-container">

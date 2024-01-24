@@ -10,10 +10,10 @@ async function postMovie(req, res) {
     const user = await User.findById(addedBy)
     user.lists.movies.push(savedMovie)
     await user.save()
-    res.redirect('/videogames-movies/videogames-movies-list')
+    res.redirect('/videogames-movies')
 
   } catch (error) {
-    res.redirect('/error')
+    res.render('error')
   }
 }
 
@@ -25,10 +25,10 @@ async function deleteMovie(req,res) {
     await Movie.findByIdAndDelete(titleId)
     userMovies.splice(movieIndex, 1)
     await req.user.save()
-    res.redirect('/videogames-movies/videogames-movies-list')
+    res.redirect('/videogames-movies')
 
   } catch (error) {
-    res.redirect('/error')
+    res.render('error')
 
   }
 }
@@ -38,10 +38,10 @@ async function updateMovie(req, res) {
     const titleId = req.params.titleId
     const { title, img } = req.body
     await Movie.findByIdAndUpdate(titleId, { title, img })
-    res.redirect('/videogames-movies/videogames-movies-list')
+    res.redirect('/videogames-movies')
 
   } catch (error) {
-    res.redirect('/error')
+    res.render('error')
   }
 }
 
@@ -52,7 +52,7 @@ async function displayEditMovieForm(req, res) {
     res.render('editmovieform', { titleId, game })
 
   } catch (error) {
-    res.redirect('/error')
+    res.render('error')
 
   }
 }

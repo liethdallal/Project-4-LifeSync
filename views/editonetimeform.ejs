@@ -1,9 +1,9 @@
 <div id="to-do-form-container">
-    <h1 id="to-do-form-title">Edit Payments-form</h1>
+    <h1 id="to-do-form-title">Edit Purchase-form</h1>
 
     <% if (user) { %>
 
-        <form action="/finance-costs/editonetimeform/<%= onetimepayment._id %>" method="post">
+        <form action="/finances/editonetimeform/<%= onetimepayment._id %>" method="post">
             <label id="task-label" for="task">Name:</label>
             <input type="text" id="task" name="name" value="<%= onetimepayment.name %>" required>
             <br>

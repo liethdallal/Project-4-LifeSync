@@ -3,7 +3,7 @@
         <div id="conatiners-withincontainer-flexbox">
             <div id="sub-div">
                 <div id="sub-div-header-container">
-                    <a href="/finance-costs/subscription-form"><button id="add-finance-button">Add +</button></a>
+                    <a href="/finances/subscription-form"><button id="add-finance-button">Add +</button></a>
                     <div id="finance-containers-headers">
                         <h1>Subscriptions</h1>
                     </div>
@@ -18,10 +18,10 @@
                         <% if (subscription.addedBy.toString() === currentUser._id.toString()) { %>
                             <div id="sub-div-header-container">
                                 <div class="container-finance-buttons">
-                                    <form action="/finance-costs/editsub/<%= subscription._id %>" method="get">
+                                    <form action="/finances/editsub/<%= subscription._id %>" method="get">
                                         <button class="finance-edit" type="submit">Edit</button>
                                     </form>
-                                    <form action="/finance-costs/removesub/<%= subscription._id %>" method="post">
+                                    <form action="/finances/removesub/<%= subscription._id %>" method="post">
                                         <input type="hidden" name="_method" value="DELETE">
                                         <button class="finance-delete" type="submit">Delete</button>
                                     </form>
@@ -55,7 +55,7 @@
 
             <div id="onetimediv">
                 <div id="sub-div-header-container">
-                    <a href="/finance-costs/onetimepayment-form"><button id="add-finance-button">Add +</button></a>
+                    <a href="/finances/onetimepayment-form"><button id="add-finance-button">Add +</button></a>
                     <div id="finance-containers-headers">
                         <h1>Purchases</h1>
                     </div>
@@ -69,10 +69,10 @@
                         <% if (onetimepayment.addedBy.toString() === currentUser._id.toString()) { %>
                             <div id="sub-div-header-container">
                                 <div class="container-finance-buttons">
-                                    <form action="/finance-costs/editonetime/<%= onetimepayment._id %>" method="get">
+                                    <form action="/finances/editonetime/<%= onetimepayment._id %>" method="get">
                                         <button class="finance-edit" type="submit">Edit</button>
                                     </form>
-                                    <form action="/finance-costs/removeonetime/<%= onetimepayment._id %>" method="post">
+                                    <form action="/finances/removeonetime/<%= onetimepayment._id %>" method="post">
                                         <input type="hidden" name="_method" value="DELETE">
                                         <button class="finance-delete" type="submit">Delete</button>
                                     </form>

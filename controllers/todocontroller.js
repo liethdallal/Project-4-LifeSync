@@ -10,10 +10,10 @@ async function postTask(req, res) {
       const user = await User.findById(addedBy)
       user.lists.toDo.push(savedTodo)
       await user.save()
-      res.redirect('/todos/todo-scheduler')
+      res.redirect('/todos')
 
-    } catch (error) {
-      res.redirect('/error')
+    }  catch (error) {
+      res.render('error')
     }
   }
 
@@ -22,10 +22,10 @@ async function postTask(req, res) {
       const taskId = req.params.taskId
       const { task, due } = req.body
       await Todo.findByIdAndUpdate(taskId, { task, due })
-      res.redirect('/todos/todo-scheduler')
+      res.redirect('/todos')
 
-    } catch (error) {
-      res.redirect('/error')
+    }  catch (error) {
+      res.render('error')
     }
   }
 
@@ -38,10 +38,10 @@ async function postTask(req, res) {
       await Todo.findByIdAndDelete(taskId)
       userTasks.splice(taskIndex, 1)
       await req.user.save()
-      res.redirect('/todos/todo-scheduler')
+      res.redirect('/todos')
 
-    } catch (error) {
-      res.redirect('/error')
+    }  catch (error) {
+      res.render('error')
     }
   }
 
@@ -53,8 +53,8 @@ async function postTask(req, res) {
       const currentUser = req.user
       res.render('todo', { todos, currentUser })
 
-    } catch (error) {
-      res.redirect('/error')
+    }  catch (error) {
+      res.render('error')
     }
   }
 
@@ -65,8 +65,8 @@ async function postTask(req, res) {
       const todo = await Todo.findById(taskId)
       res.render('edittodoform', {todo, taskId})
 
-    } catch (error) {
-      res.redirect('/error')
+    }  catch (error) {
+      res.render('error')
     }
   }
 

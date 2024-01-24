@@ -4,7 +4,7 @@
 
     <% if (user) { %>
 
-        <form action="/nutrition/nutrition-form" method="post">
+        <form action="/nutrition/edit/<%= nutritionId %>" method="post">
             <label id="task-label" for="task">Name:</label>
             <input type="text" id="task" name="name" required>
             <br>

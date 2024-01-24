@@ -11,10 +11,10 @@ async function postSubscription(req, res) {
       const user = await User.findById(addedBy)
       user.lists.subscriptions.push(savedSubscription)
       await user.save()
-      res.redirect('/finance-costs/finance-manager')
+      res.redirect('/finances')
 
-    }  catch (error) {
-      res.redirect('/error')
+    }   catch (error) {
+      res.render('error')
     }
   }
 
@@ -26,10 +26,10 @@ async function postSubscription(req, res) {
       await Subscription.findByIdAndDelete(subscriptionId)
       userSubscriptions.splice(subscriptionIndex, 1)
       await req.user.save()
-      res.redirect('/finance-costs/finance-manager')
+      res.redirect('/finances')
 
     }  catch (error) {
-      res.redirect('/error')
+      res.render('error')
     }
   }
 
@@ -38,10 +38,10 @@ async function postSubscription(req, res) {
       const subscriptionId = req.params.subscriptionId
       const { name, cost } = req.body
       await Subscription.findByIdAndUpdate(subscriptionId, { name, cost })
-      res.redirect('/finance-costs/finance-manager')
+      res.redirect('/finances')
 
     }  catch (error) {
-      res.redirect('/error')
+      res.render('error')
     }
   }
   
@@ -52,7 +52,7 @@ async function postSubscription(req, res) {
       res.render('editsubform', { subscriptionId, subscription })
 
     }  catch (error) {
-      res.redirect('/error')
+      res.render('error')
     }
   }
 
@@ -63,8 +63,8 @@ async function postSubscription(req, res) {
       const currentUser = req.user
       res.render('finance', { subscriptions, onetimepayments, currentUser })
   
-    }  catch (error) {
-      res.redirect('/error')
+    }   catch (error) {
+      res.render('error')
     }
   }
 

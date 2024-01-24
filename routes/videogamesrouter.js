@@ -12,6 +12,6 @@ router.get('/editformgame/:titleId', videoGameController.displayEditVideogameFor
 
 router.get('/videogame-form', videoGameController.getVideoGameForm)
  
-router.get('/videogames-movies-list', videoGameController.getVideogamesAndMoviesPage)
+router.get('/', videoGameController.getVideogamesAndMoviesPage)
 
 module.exports = router

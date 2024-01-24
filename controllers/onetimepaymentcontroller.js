@@ -10,10 +10,10 @@ async function postOnetimepayment(req, res) {
       const user = await User.findById(addedBy)
       user.lists.oneTimePayments.push(savedOnetimepayment)
       await user.save()
-      res.redirect('/finance-costs/finance-manager')
+      res.redirect('/finances')
 
     } catch (error) {
-      res.redirect('/error')
+      res.render('error')
     }
   }
 
@@ -25,10 +25,10 @@ async function postOnetimepayment(req, res) {
       await Onetimepayment.findByIdAndDelete(onetimepaymentId)
       userOnetimepayments.splice(oneTimePaymentIndex, 1)
       await req.user.save()
-      res.redirect('/finance-costs/finance-manager')
+      res.redirect('/finances')
 
-    } catch (error) {
-      res.redirect('/error')
+    }  catch (error) {
+      res.render('error')
     }
   }
 
@@ -38,10 +38,10 @@ async function postOnetimepayment(req, res) {
       const onetimepaymentId = req.params.onetimepaymentId
       const { name, cost } = req.body
       await Onetimepayment.findByIdAndUpdate(onetimepaymentId, { name, cost })
-      res.redirect('/finance-costs/finance-manager')
+      res.redirect('/finances')
 
-    } catch (error) {
-      res.redirect('/error')
+    }  catch (error) {
+      res.render('error')
     }
   }
   
@@ -51,8 +51,8 @@ async function postOnetimepayment(req, res) {
       const onetimepayment = await Onetimepayment.findById(onetimepaymentId)
       res.render('editonetimeform', { onetimepaymentId, onetimepayment })
 
-    } catch (error) {
-      res.redirect('/error')
+    }  catch (error) {
+      res.render('error')
     }
   }
 

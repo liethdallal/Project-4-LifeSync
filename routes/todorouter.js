@@ -12,6 +12,6 @@ router.get('/editform/:taskId', toDoController.displayEditToDoForm)
 
 router.get('/todo-form', toDoController.displayToDoForm)
 
-router.get('/todo-scheduler', toDoController.displayToDoPage)
+router.get('/', toDoController.displayToDoPage)
 
 module.exports = router

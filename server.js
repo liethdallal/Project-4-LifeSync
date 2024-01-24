@@ -17,6 +17,7 @@ const videogameRouter = require('./routes/videogamesrouter')
 const movieRouter = require('./routes/movierouter')
 const subscriptionsRouter = require('./routes/subscriptionrouter')
 const oneTimePaymentRouter = require('./routes/onetimepaymentrouter')
+const nutritionRouter = require('./routes/nutritionrouter')
 const PORT = process.env.PORT 
 
 
@@ -49,9 +50,9 @@ app.use('/users', userRouter)
 app.use('/todos', todoRouter)
 app.use('/videogames-movies', videogameRouter)
 app.use('/videogames-movies', movieRouter)
-app.use('/finance-costs', subscriptionsRouter)
-app.use('/finance-costs', oneTimePaymentRouter)
-
+app.use('/finances', subscriptionsRouter)
+app.use('/finances', oneTimePaymentRouter)
+app.use('/nutrition', nutritionRouter)
 
 
 app.listen(PORT, () => {

@@ -12,6 +12,6 @@ router.get('/editsub/:subscriptionId', subscriptionController.displayEditSubscri
 
 router.get('/subscription-form', subscriptionController.displaySubscriptionForm)
 
-router.get('/finance-manager', subscriptionController.getFinancePage)
+router.get('/', subscriptionController.getFinancePage)
 
 module.exports = router
