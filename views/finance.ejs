@@ -13,44 +13,44 @@
                 </div>
                 <hr class="finance-line">
 
-
                 <% if (user) { %>
-
-                <% subscriptions.forEach(subscription => { %>
-                <% if (subscription.addedBy.toString() === currentUser._id.toString()) { %>
-                    <div id="sub-div-header-container">
-                        <form action="/finance-costs/removesub/<%= subscription._id %>" method="post">
-                            <input type="hidden" name="_method" value="DELETE">
-                            <button class="finance-delete" type="submit">Delete</button>
-                        </form>
-                        <div id="finance-containers">
-                            <h2><%= subscription.name %></h2>
-                        </div>
-                        <div id="finance-containers">
-                            <h2><%= subscription.cost %></h2>
-                        </div>
-                    </div>
-                <% } %>
-                <% }); %>
-
+                    <% subscriptions.forEach(subscription => { %>
+                        <% if (subscription.addedBy.toString() === currentUser._id.toString()) { %>
+                            <div id="sub-div-header-container">
+                                <div class="container-finance-buttons">
+                                    <form action="/finance-costs/editsub/<%= subscription._id %>" method="get">
+                                        <button class="finance-edit" type="submit">Edit</button>
+                                    </form>
+                                    <form action="/finance-costs/removesub/<%= subscription._id %>" method="post">
+                                        <input type="hidden" name="_method" value="DELETE">
+                                        <button class="finance-delete" type="submit">Delete</button>
+                                    </form>
+                                </div>
+                                <div id="finance-containers">
+                                    <h2><%= subscription.name %></h2>
+                                </div>
+                                <div id="finance-containers">
+                                    <h2><%= subscription.cost %></h2>
+                                </div>
+                            </div>
+                        <% } %>
+                    <% }) %>
                 <% } else { %>
                     <h1 id="not-signed-in">To use LifeSync Features you need to sign in!</h1>
-
                 <% } %>
-                <% if(user){ %>
-                <% if(currentUser.lists.subscriptions.length == 0) {%>
-                    <div id="sub-div-header-container">
-                        <button class="finance-delete" type="submit">"Delete"</button>
-                        <div id="finance-containers">
-                            <h2>"name of subscription you want or have" </h2>
+                <% if (user) { %>
+                    <% if (currentUser.lists.subscriptions.length == 0) { %>
+                        <div id="sub-div-header-container">
+                            <button class="finance-delete" type="submit">Delete</button>
+                            <div id="finance-containers">
+                                <h2>"name of subscription you want or have" </h2>
+                            </div>
+                            <div id="finance-containers">
+                                <h2>"how much you pay (yearly, monthly, etc. you decide)"</h2>
+                            </div>
                         </div>
-                        <div id="finance-containers">
-                            <h2>"how much you pay (yearly, monthly, etc. you decide)"</h2>
-                        </div>
-                    </div>
+                    <% } %>
                 <% } %>
-                <% } %>
-
             </div>
 
             <div id="onetimediv">
@@ -65,44 +65,46 @@
                 </div>
                 <hr class="finance-line">
                 <% if (user) { %>
-                <% onetimepayments.forEach(onetimepayment => { %>
-                    <% if (onetimepayment.addedBy.toString() === currentUser._id.toString()) { %>
-                        <div id="sub-div-header-container">
-                            <form action="/finance-costs/removeonetime/<%= onetimepayment._id %>" method="post">
-                                <input type="hidden" name="_method" value="DELETE">
-                                <button class="finance-delete" type="submit">Delete</button>
-                            </form>
-                            <div id="finance-containers">
-                                <h2><%= onetimepayment.name %></h2>
+                    <% onetimepayments.forEach(onetimepayment => { %>
+                        <% if (onetimepayment.addedBy.toString() === currentUser._id.toString()) { %>
+                            <div id="sub-div-header-container">
+                                <div class="container-finance-buttons">
+                                    <form action="/finance-costs/editonetime/<%= onetimepayment._id %>" method="get">
+                                        <button class="finance-edit" type="submit">Edit</button>
+                                    </form>
+                                    <form action="/finance-costs/removeonetime/<%= onetimepayment._id %>" method="post">
+                                        <input type="hidden" name="_method" value="DELETE">
+                                        <button class="finance-delete" type="submit">Delete</button>
+                                    </form>
+                                </div>
+                                <div id="finance-containers">
+                                    <h2><%= onetimepayment.name %></h2>
+                                </div>
+                                <div id="finance-containers">
+                                    <h2><%= onetimepayment.cost %></h2>
+                                </div>
                             </div>
-                            <div id="finance-containers">
-                                <h2><%= onetimepayment.cost %></h2>
-                            </div>
-                        </div>
-
-                    <% } %>
-                    <% }); %>
-       
+                        <% } %>
+                    <% }) %>
                 <% } else { %>
                     <h1 id="not-signed-in">To use LifeSync Features you need to sign in!</h1>
                 <% } %>
-            
-                <% if(user){ %>
-                <% if(currentUser.lists.oneTimePayments.length == 0) {%>
-                    <div id="sub-div-header-container">
-                        <button class="finance-delete" type="submit">"Delete"</button>
-                        <div id="finance-containers">
-                            <h2>"name of purchase you want to make"</h2>
+                <% if (user) { %>
+                    <% if (currentUser.lists.oneTimePayments.length == 0) { %>
+                        <div id="sub-div-header-container">
+                            <div class="container-finance-buttons">
+                                <button class="finance-delete" type="submit">Delete</button>
+                            </div>
+                            <div id="finance-containers">
+                                <h2>"name of purchase you want to make"</h2>
+                            </div>
+                            <div id="finance-containers">
+                                <h2>"cost of that purchase (you decide currency)"</h2>
+                            </div>
                         </div>
-                        <div id="finance-containers">
-                            <h2>"cost of that purchase (you decide currency)"</h2>
-                        </div>
-                    </div>
-
-                <% } %>
+                    <% } %>
                 <% } %>
             </div>
         </div>
     </div>
-
 </div>

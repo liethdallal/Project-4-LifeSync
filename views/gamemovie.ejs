@@ -1,94 +1,93 @@
 <div id="gamemovie-flex">
-
     <div id="gamemovie-container">
-
         <div id="center-box-div">
-        <h1 id="gamemovietitles">Videogames List </h1>
-        <a href="/videogames-movies/videogame-form"><button id="add-game-movie">Add Game</button></a>
+            <h1 id="gamemovietitles">Videogames List</h1>
+            <a href="/videogames-movies/videogame-form"><button id="add-game-movie">Add Game</button></a>
         </div>
+
         <div id="movies-container-flexbox">
-
-        <% if (user) { %>
-
-        <% games.forEach(game => { %>
-            <% if (game.addedBy.toString() === currentUser._id.toString()) { %>
-                <div id="movies-container">
-                    <img class="movie-pic" src="<%= game.img %>" alt="Game Poster">
-                    <div class="movie-title-container">
-                        <h2 class="movie-title" ><%= game.title %></h2>
+            <% if (user) { %>
+                <% games.forEach(game => { %>
+                    <% if (game.addedBy.toString() === currentUser._id.toString()) { %>
+                        <div id="movies-container">
+                            <img class="movie-pic" src="<%= game.img %>" alt="Game Poster">
+                            <div class="movie-title-container">
+                                <h2 class="movie-title"><%= game.title %></h2>
+                            </div>
+                            <div id="buttondiv-container">
+                                <form action="/videogames-movies/editformgame/<%= game._id %>" method="get">
+                                    <button class="movie-edit-button" type="submit">Edit</button>
+                                </form>
+                                <form action="/videogames-movies/removegame/<%= game._id %>" method="post">
+                                    <input type="hidden" name="_method" value="DELETE">
+                                    <button class="movie-delete-button" type="submit">Delete</button>
+                                </form>
+                            </div>
+                        </div>
+                    <% } %>
+                <% })%>
+            <% } else { %>
+                <h1 id="not-signed-in">To use LifeSync Features you need to sign in!</h1>
+            <% } %>
+            <% if (user) { %>
+                <% if (currentUser.lists.videoGames.length == 0) { %>
+                    <div id="movies-container">
+                        <img class="movie-pic" src="/imgs/example-game.jpg" alt="Edit and try another online image url">
+                        <div class="movie-title-container">
+                            <h2 class="movie-title">"Game Title"</h2>
+                            <div id="buttondiv-container">
+                                <button class="movie-edit-button" type="submit">Edit</button>
+                                <button class="movie-delete-button" type="submit">Delete</button>
+                            </div>
+                        </div>
                     </div>
-                    <form action="/videogames-movies/removegame/<%= game._id %>" method="post">
-                        <input type="hidden" name="_method" value="DELETE">
-                            <button class="movie-delete-button" type="submit">Delete</button>
-                    </form>
-                </div>
-
-
                 <% } %>
-        <% }); %>
-
-        <% } else { %>
-        <h1 id="not-signed-in">To use LifeSync Features you need to sign in!</h1>
-        <% } %>
-        <% if(user){ %>
-        <% if(currentUser.lists.videoGames.length == 0) {%>
-            <div id="movies-container">
-                <img class="movie-pic" src="/imgs/example-game.jpg" alt="Game Poster">
-                <div class="movie-title-container">
-                    <h2 class="movie-title">"Game Title"</h2>
-                    <button class="movie-delete-button" type="submit">"Delete"</button>
-
-                </div>
-            </div>
-        <% } %>
-        <% } %>
-
-    </div>
+            <% } %>
+        </div>
 
         <div id="center-box-div">
             <h1 id="gamemovietitles">Movies List</h1>
             <a href="/videogames-movies/movie-form"><button id="add-game-movie">Add Movie</button></a>
+        </div>
 
-        </div>          
         <div id="movies-container-flexbox">
-
-        <% if (user) { %>
-        <% movies.forEach(movie => { %>
-            <% if (movie.addedBy.toString() === currentUser._id.toString()) { %>
-
-                <div id="movies-container">
-                    <img class="movie-pic" src="<%= movie.img %>" alt="Movie Poster">
-                    <div class="movie-title-container">
-                        <h2 class="movie-title" ><%= movie.title %></h2>
+            <% if (user) { %>
+                <% movies.forEach(movie => { %>
+                    <% if (movie.addedBy.toString() === currentUser._id.toString()) { %>
+                        <div id="movies-container">
+                            <img class="movie-pic" src="<%= movie.img %>" alt="Edit and try another online image url">
+                            <div class="movie-title-container">
+                                <h2 class="movie-title"><%= movie.title %></h2>
+                            </div>
+                            <div id="buttondiv-container">
+                                <form action="/videogames-movies/editformmovie/<%= movie._id %>" method="get">
+                                    <button class="movie-edit-button" type="submit">Edit</button>
+                                </form>
+                                <form action="/videogames-movies/removemovie/<%= movie._id %>" method="post">
+                                    <input type="hidden" name="_method" value="DELETE">
+                                    <button class="movie-delete-button" type="submit">Delete</button>
+                                </form>
+                            </div>
+                        </div>
+                    <% } %>
+                <% })%>
+            <% } else { %>
+                <h1 id="not-signed-in">To use LifeSync Features you need to sign in!</h1>
+            <% } %>
+            <% if (user) { %>
+                <% if (currentUser.lists.movies.length == 0) { %>
+                    <div id="movies-container">
+                        <img class="movie-pic" src="/imgs/movie-example.jpg" alt="MoviePoster">
+                        <div class="movie-title-container">
+                            <h2 class="movie-title">"Movie Title"</h2>
+                            <div id="buttondiv-container">
+                                <button class="movie-edit-button" type="submit">Edit</button>
+                                <button class="movie-delete-button" type="submit">Delete</button>
+                            </div>
+                        </div>
                     </div>
-                    <form action="/videogames-movies/removemovie/<%= movie._id %>" method="post">
-                        <input type="hidden" name="_method" value="DELETE">
-                            <button class="movie-delete-button" type="submit">Delete</button>
-                    </form>
-                </div>
-
-            
-            
                 <% } %>
-                <% }); %>
-       
-        <% } else { %>
-            <h1 id="not-signed-in">To use LifeSync Features you need to sign in!</h1>
             <% } %>
-            
-            <% if(user){ %>
-            <% if(currentUser.lists.movies.length == 0) {%>
-                <div id="movies-container">
-                    <img class="movie-pic" src="/imgs/movie-example.jpg" alt="MoviePoster">
-                    <div class="movie-title-container">
-                        <h2 class="movie-title">"Movie Title"</h2>
-                        <button class="movie-delete-button" type="submit">"Delete"</button>
-
-                    </div>
-                </div>
-            <% } %>
-            <% } %>
-
-
+        </div>
     </div>
 </div>

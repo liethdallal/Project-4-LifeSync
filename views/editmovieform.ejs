@@ -1,0 +1,23 @@
+<div id="to-do-form-container">
+    <h1 id="to-do-form-title">Edit movie-form</h1>
+
+    <% if (user) { %>
+
+        <form action="/videogames-movies/editmovie/<%= titleId %>" method="post">
+            <label id="task-label" for="task">Title:</label>
+            <input type="text" id="task" name="title" value="<%= game.title %>" required>
+            <br>
+            <label id="due-label" for="due">Image URL:</label>
+            <input type="text" id="due" name="img" value="<%= game.img %>" required>
+            <br>
+            <div id="to-do-form-submit-button-container">
+                <button id="to-do-form-submit-button" type="submit">Update</button>
+            </div>
+        </form>
+
+    <% } else { %>
+
+        <h1 id="not-signed-in">To use LifeSync Features, you need to sign in!</h1>
+
+    <% } %>
+</div>

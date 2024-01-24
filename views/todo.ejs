@@ -1,6 +1,7 @@
 <div id="to-do-flexbox">
 
     <div id="to-do-container">
+
         <div id="task-due-container">
 
             <div class="task-containers">
@@ -18,7 +19,9 @@
             </div>
             
         </div>
+
         <hr id="todoline">
+        
         <% if (user) { %>
             <% todos.forEach(todo => { %>
                 <% if (todo.addedBy.toString() === currentUser._id.toString()) { %>
@@ -46,17 +49,20 @@
                         </div>
                     </div>
                 <% } %>
-            <% }); %>
+            <% }) %>
 
         <% } else { %>
             <h1 id="not-signed-in">To use LifeSync Features you need to sign in!</h1>
         <% } %>
 
         <% if(user){ %>
-        <% if(currentUser.lists.toDo.length ==  0){ %>
+            <% if(currentUser.lists.toDo.length ==  0){ %>
             <div class='addtask'>
-                <div class="task-containers">
-                    <button class="delete-button" type="submit">e.g. Delete</button>
+                <div id="edit-delete-div">
+                    <div class="task-containers">
+                        <button class="edit-button" type="submit">Edit</button>
+                        <button class="delete-button" type="submit">Delete</button>
+                    </div>
                 </div>
                 <div class="task-containers">
                     <h1 class="task">"a task you would like to complete"</h1>

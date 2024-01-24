@@ -2,7 +2,7 @@ const express = require('express')
 const passport = require('passport')
 require('./connections/passport')
 const app = express()
-require('dotenv').config();
+require('dotenv').config()
 const session = require('express-session')
 const cookieParser = require('cookie-parser')
 const logger = require('morgan')

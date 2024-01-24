@@ -321,6 +321,7 @@ margin-bottom: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 #gamemovie-container{
     width: 95%;
@@ -360,7 +361,7 @@ margin-top: 10px;
     font-family: "Tektur", sans-serif;
 }
 .movie-delete-button{
-    width: 200px;
+    width: 100px;
     height: 50px;
     font-size: 30px;
     border-radius: 10px;
@@ -393,6 +394,24 @@ margin-top: 10px;
     font-family: "Tektur", sans-serif;
     font-size: 45px;
 }
+#buttondiv-container{
+    display: flex;
+}
+.movie-edit-button{
+    width: 100px;
+    height: 50px;
+    font-size: 30px;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-family: "Tektur", sans-serif;
+    background-color: rgb(135, 194, 135);
+
+}
+.movie-edit-button:hover{
+    background-color: yellowgreen;
+    transition: background-color 0.3s;
+}
 /* Videogame and Movie styling ends here  */
 /* Finance styling starts here  */
 #finance-flex-box-container{
@@ -412,13 +431,15 @@ margin-top: 10px;
     justify-content: center;
 }
 #sub-div{
-border: solid black 5px;
+border: none;
+background-color: #8f68c9;
 min-height: 950px;
 width: 600px;
 margin: 20px;
 }
 #onetimediv{
-    border: solid black 5px;
+    border: none;
+    background-color: #8f68c9;
     min-height: 950px;
     width: 600px;
     margin: 20px;
@@ -451,7 +472,7 @@ margin: 20px;
 }
 .finance-delete{
     width: 100px;
-    height: 50px;
+    height: 40px;
     font-size: 22px;
     font-family: "Tektur", sans-serif;
     border-radius: 10px;
@@ -472,10 +493,24 @@ border: none;
     height: 50px;
     border-radius: 10px;
     font-size: 22px;
-    background-color: yellowgreen;
-
+    background-color: rgb(86, 248, 86);
+    font-family: "Tektur", sans-serif;
 }
 #add-finance-button:hover{
     background-color: rgb(135, 194, 135);
     transition: background-color 0.3s;
 }
+
+.finance-edit{
+    width: 100px;
+    height: 40px;
+    font-size: 22px;
+    font-family: "Tektur", sans-serif;
+    border-radius: 10px;
+    background-color: rgb(135, 194, 135);
+}
+.finance-edit:hover{
+    background-color: yellowgreen;
+    transition: background-color 0.3s;
+}
+/* Finance styling ends here  */

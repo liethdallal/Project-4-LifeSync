@@ -38,7 +38,7 @@ const UserSchema = new mongoose.Schema({
   }
 }, {
   timestamps: true
-});
+})
 
 
 function applyPopulate(next) {
@@ -47,13 +47,13 @@ function applyPopulate(next) {
       .populate('lists.videoGames')
       .populate('lists.subscriptions')
       .populate('lists.oneTimePayments')
-      .populate('lists.nutrition');
-    next();
+      .populate('lists.nutrition')
+    next()
   }
   
-  UserSchema.pre('findOne', applyPopulate);
+  UserSchema.pre('findOne', applyPopulate)
   
-  UserSchema.pre('find', applyPopulate);
+  UserSchema.pre('find', applyPopulate)
 
 const User = mongoose.model('User', UserSchema)
 

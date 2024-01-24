@@ -8,10 +8,9 @@ const NutritionSchema = new mongoose.Schema({
     sodium: {type: Number, required: true},
     sugar: {type: Number, required: true},
     addedBy: { type: Schema.Types.ObjectId, ref: 'User' }
-
-  });
+  })
   
-  const Nutrition = mongoose.model('Nutrition', NutritionSchema);
+  const Nutrition = mongoose.model('Nutrition', NutritionSchema)
   
-  module.exports = Nutrition;
+  module.exports = Nutrition
   
