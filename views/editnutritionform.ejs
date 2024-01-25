@@ -1,24 +1,24 @@
 <div id="to-do-form-container">
     
-    <h1 id="to-do-form-title">To-do Form</h1>
+    <h1 id="to-do-form-title">Edit Nutrition-Form Form</h1>
 
     <% if (user) { %>
 
         <form action="/nutrition/edit/<%= nutritionId %>" method="post">
             <label id="task-label" for="task">Name:</label>
-            <input type="text" id="task" name="name" required>
+            <input type="text" id="task" name="name" value="<%= nutrition.name %>" required>
             <br>
-            <label id="due-label" for="due">Serving Size:</label>
-            <input type="text" id="due" name="servingsize" required>
+            <label id="due-label" for="due">Serving Size (g):</label>
+            <input type="text" id="due" name="servingsize" value="<%= nutrition.servingsize %>" required>
             <br>
-            <label id="task-label" for="task">Calories:</label>
-            <input type="text" id="task" name="calories" required>
+            <label id="task-label" for="task">Calories (kcal):</label>
+            <input type="text" id="task" name="calories" value="<%= nutrition.calories %>" required>
             <br>
-            <label id="task-label" for="task">Sodium:</label>
-            <input type="text" id="task" name="sodium" required>
+            <label id="task-label" for="task">Sodium (g):</label>
+            <input type="text" id="task" name="sodium" value="<%= nutrition.sodium %>"  required>
             <br>
-            <label id="task-label" for="task">Sugar:</label>
-            <input type="text" id="task" name="sugar" required>
+            <label id="task-label" for="task">Sugar (g):</label>
+            <input type="text" id="task" name="sugar" value="<%= nutrition.sugar %>"   required>
             <br>
             <div id="to-do-form-submit-button-container">
                 <button id="to-do-form-submit-button" type="submit">Submit</button>
@@ -31,6 +31,13 @@
         <h1 id="not-signed-in">To use LifeSync Features you need to sign in!</h1>
     
     <% } %>
+    <button onclick="goBack()" class="gobackbutton">Go Back</button>
+
+    <script>
+        function goBack() {
+        window.history.back();
+        }
+    </script>
     
     
 </div>

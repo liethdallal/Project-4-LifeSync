@@ -1,23 +1,23 @@
 <div id="to-do-form-container">
     
-    <h1 id="to-do-form-title">To-do Form</h1>
+    <h1 id="to-do-form-title">Nutrition Form</h1>
 
     <% if (user) { %>
 
         <form action="/nutrition/nutrition-form" method="post">
             <label id="task-label" for="task">Name:</label>
-            <input type="text" id="task" name="name" required>
+            <input type="text" id="task" name="name"  required>
             <br>
-            <label id="due-label" for="due">Serving Size:</label>
+            <label id="due-label" for="due">Serving Size (g):</label>
             <input type="text" id="due" name="servingsize" required>
             <br>
-            <label id="task-label" for="task">Calories:</label>
+            <label id="task-label" for="task">Calories (kcal):</label>
             <input type="text" id="task" name="calories" required>
             <br>
-            <label id="task-label" for="task">Sodium:</label>
+            <label id="task-label" for="task">Sodium (g):</label>
             <input type="text" id="task" name="sodium" required>
             <br>
-            <label id="task-label" for="task">Sugar:</label>
+            <label id="task-label" for="task">Sugar (g):</label>
             <input type="text" id="task" name="sugar" required>
             <br>
             <div id="to-do-form-submit-button-container">
@@ -31,7 +31,13 @@
         <h1 id="not-signed-in">To use LifeSync Features you need to sign in!</h1>
     
     <% } %>
-    
+    <button onclick="goBack()" class="gobackbutton">Go Back</button>
+
+    <script>
+        function goBack() {
+        window.history.back();
+        }
+    </script>
     
 </div>
     

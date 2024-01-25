@@ -53,7 +53,9 @@ app.use('/videogames-movies', movieRouter)
 app.use('/finances', subscriptionsRouter)
 app.use('/finances', oneTimePaymentRouter)
 app.use('/nutrition', nutritionRouter)
-
+app.use((err, req, res, next) => {
+  res.render('error');
+})
 
 app.listen(PORT, () => {
   console.log('Listening!🔥')

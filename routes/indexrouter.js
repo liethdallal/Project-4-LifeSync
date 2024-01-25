@@ -12,4 +12,6 @@ router.get('/auth/google', indexController.login)
 
   router.get('/', indexController.homepage)
 
+  router.get('/error', indexController.errorPage)
+
   module.exports = router

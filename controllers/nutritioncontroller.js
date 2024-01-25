@@ -62,8 +62,8 @@ async function postNutrition(req, res) {
   async function displayEditNutritionForm(req,res){
     try {
       const nutritionId = req.params.nutritionId
-      const Nutrition = await Nutrition.findById(nutritionId)
-      res.render('editnutritionform', {Nutrition, nutritionId})
+      const nutrition = await Nutrition.findById(nutritionId)
+      res.render('editnutritionform', {nutrition, nutritionId})
 
     }  catch (error) {
       res.render('error')

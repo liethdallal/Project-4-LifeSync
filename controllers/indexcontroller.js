@@ -28,4 +28,7 @@ function homepage(req, res) {
   res.render('homepage')
 }
 
-module.exports = { login, callBack, logout, homepage }
+function errorPage(req,res) {
+  res.render('error')
+}
+module.exports = { login, callBack, logout, homepage,errorPage }

@@ -294,7 +294,7 @@ margin-bottom: 60px;
     font-size: 40px;
     border-radius: 10px;
     font-family: "Tektur", sans-serif;
-
+    background-color: greenyellow;
 }
 #to-do-form-submit-button:hover{
     background-color:  rgb(121, 211, 121);
@@ -306,13 +306,25 @@ margin-bottom: 60px;
     justify-content: center;
     align-items: center;
     margin-top: 30px;
-    margin-bottom: 700px;
+    margin-bottom: 50px;
 }
 #to-do-form-title{
     text-align: center;
     margin-bottom: 20px;
     color: aqua;
     font-family: "Tektur", sans-serif;
+}
+.gobackbutton{
+    width: 170px;
+    height: 70px;
+    font-size: 40px;
+    border-radius: 10px;
+    font-family: "Tektur", sans-serif;
+    background-color: rgb(80, 80, 245);
+}
+.gobackbutton:hover{
+    background-color:  rgb(190, 140, 190);
+    transition: background-color 0.3s;
 }
 /* Forms styling ends here  */
 
@@ -412,6 +424,16 @@ margin-top: 10px;
     background-color: yellowgreen;
     transition: background-color 0.3s;
 }
+#titlegamemovie{
+    display: flex;
+}
+#videogame-emoji{
+    width: 100px;
+}
+#movie-emoji2{
+    width: 100px;
+    transform: scaleX(-1);
+}
 /* Videogame and Movie styling ends here  */
 /* Finance styling starts here  */
 #finance-flex-box-container{
@@ -427,7 +449,7 @@ margin-top: 10px;
 }
 #conatiners-withincontainer-flexbox{
     display: flex;
-    gap: 100px;
+    gap: 50px;
     justify-content: center;
 }
 #sub-div{
@@ -514,5 +536,78 @@ border: none;
     transition: background-color 0.3s;
 }
 /* Finance styling ends here  */
-
 /* Nutrition styling starts here  */
+#nutrition-flex-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#nutrition-container{
+    width: 95%;
+    min-height: 1100px;
+    margin-top: 30px;
+    background-color: #4068A8;
+}
+#table-flex-container{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-top: 50px;
+}
+table {
+    border-collapse: collapse;
+    width: 95%;
+  }
+
+  th, td {
+    background-color: rgb(68, 192, 192);
+    text-align: center;
+    padding: 8px;
+    font-family: "Tektur", sans-serif;
+    font-size: 32px;
+    font-weight: bold;
+
+  }
+tr{
+    border: solid 5px black;
+}
+  th {
+    background-color: #f2f2f2;
+    font-family: "Tektur", sans-serif;
+    font-size: 30px;
+  }
+  #nutrition-buttons-container{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+  }
+  #nutrition-edit-button{
+    width: 100px;
+    height: 40px;
+    font-size: 30px;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-family: "Tektur", sans-serif;
+    background-color: rgb(135, 194, 135);
+  }
+  #nutrition-delete-button{
+    width: 100px;
+    height: 40px;
+    font-size: 30px;
+    font-family: "Tektur", sans-serif;
+    border-radius: 10px;
+    background-color: rgb(201, 103, 103);
+  }
+  #nutrition-edit-button:hover{
+    background-color: yellowgreen;
+    transition: background-color 0.3s;
+  }
+  #nutrition-delete-button:hover{
+    background-color: crimson;
+    transition: background-color 0.3s;
+  }
+  #empty-table{
+    height: 600px;
+  }

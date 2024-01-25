@@ -41,7 +41,14 @@
                 <% if (user) { %>
                     <% if (currentUser.lists.subscriptions.length == 0) { %>
                         <div id="sub-div-header-container">
-                            <button class="finance-delete" type="submit">Delete</button>
+                            <div class="container-finance-buttons">
+                                <form>
+                                    <button class="finance-edit" >Edit</button>
+                                </form>
+                                <form>
+                                    <button class="finance-delete" >Delete</button>
+                                </form>
+                            </div>
                             <div id="finance-containers">
                                 <h2>"name of subscription you want or have" </h2>
                             </div>
@@ -93,7 +100,12 @@
                     <% if (currentUser.lists.oneTimePayments.length == 0) { %>
                         <div id="sub-div-header-container">
                             <div class="container-finance-buttons">
-                                <button class="finance-delete" type="submit">Delete</button>
+                                <form>
+                                    <button class="finance-edit" >Edit</button>
+                                </form>
+                                <form>
+                                    <button class="finance-delete" >Delete</button>
+                                </form>
                             </div>
                             <div id="finance-containers">
                                 <h2>"name of purchase you want to make"</h2>

@@ -1,1 +1,85 @@
-<h1>nutrition manager page</h1>
+<div id="nutrition-flex-container">
+    <div id="nutrition-container">
+        <div id="table-flex-container">
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>
+                            <a href="/nutrition/nutrition-form"><button id="add-finance-button">Add +</button></a>
+                        </th>
+                        <th>Food Name</th>
+                        <th>Serving Size (grams)</th>
+                        <th>Calories per serving (kcal)</th>
+                        <th>Sodium per serving (grams)</th>
+                        <th>Sugar per serving (grams)</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <% if (user) { %>
+                        <% nutritions.forEach(nutrition => { %>
+                            <% if (nutrition.addedBy.toString() === currentUser._id.toString()) { %>
+                                <tr>
+                                    <td>
+                                        <div id="nutrition-buttons-container">
+                                            <form action="/nutrition/editform/<%= nutrition._id %>" method="get">
+                                                    <button id="nutrition-edit-button" type="submit">Edit</button>
+                                            </form>
+                                            <form action="/nutrition/remove/<%= nutrition._id %>" method="post">
+                                                <input type="hidden" name="_method" value="DELETE">
+                                                    <button id="nutrition-delete-button" type="submit">Delete</button>
+                                            </form>
+                                        </div>
+                                    </td>
+                                    <td><%= nutrition.name %></td>
+                                    <td><%= nutrition.servingsize %></td>
+                                    <td><%= nutrition.calories %></td>
+                                    <td><%= nutrition.sodium %></td>
+                                    <td><%= nutrition.sugar %></td>
+                                  
+                                </tr>
+                            <% } %>
+                        <% }) %>
+            
+                    <% } %>
+            
+                    <% if(user){ %>
+                        <% if(currentUser.lists.nutrition.length ==  0){ %>
+                            <tr>
+                                <td>
+                                    <div id="nutrition-buttons-container">
+                                        <button id="nutrition-edit-button">Edit</button>
+                                        <button id="nutrition-delete-button">Delete</button>
+                                    </div>
+                                </td>
+                                <td>"a food item you enjoy"</td>
+                                <td>"serving size you usually consume of this food in grams (g)"</td>
+                                <td>"amount of calories in that serving size"</td>
+                                <td>"amount of sodium in grams (g) of that serving size"</td>
+                                <td>"amount of sugar in grams (g) of that serving size"</td>
+                              
+                            </tr>
+                            <tr id="empty-table">
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                              
+                            </tr>
+                    <% } %>
+                        <% } %>
+                </tbody>
+          </table>
+
+        </div>
+        <% if (!user) { %>
+            <div>
+                <h1 id="not-signed-in">To use LifeSync Features you need to sign in!</h1>
+            </div>
+        <% } %>
+    </div>
+</div>
