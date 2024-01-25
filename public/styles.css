@@ -569,7 +569,7 @@ table {
 
   }
 tr{
-    border: solid 5px black;
+    border-bottom: solid 5px black;
 }
   th {
     background-color: #f2f2f2;
