@@ -2,6 +2,8 @@ const Subscription = require('../models/subscriptionmodel')
 const Onetimepayment = require('../models/onetimepaymentmodel')
 const User = require('../models/usermodel')
 
+
+//creates a new subscription and psuhed it to users list and collection of subscriptions 
 async function postSubscription(req, res) {
     try {
       const { name, cost } = req.body 
@@ -18,6 +20,7 @@ async function postSubscription(req, res) {
     }
   }
 
+  //deletes a specific subscription by its id from both the users list and the collection 
   async function deleteSubscription(req, res) {
     try {  
       const subscriptionId = req.params.subscriptionId
@@ -33,6 +36,7 @@ async function postSubscription(req, res) {
     }
   }
 
+  //updates a subscription by passing the values and updating it for the id of the subscription 
   async function updateSubscription(req, res) {
     try {
       const subscriptionId = req.params.subscriptionId
@@ -45,6 +49,7 @@ async function postSubscription(req, res) {
     }
   }
   
+  //Displays the form that holds the values of the specific subscription 
   async function displayEditSubscriptionForm(req, res) {
     try {
       const subscriptionId = req.params.subscriptionId
@@ -56,6 +61,7 @@ async function postSubscription(req, res) {
     }
   }
 
+  //displays the entire finance page and pases along both the onetime payments and the subscriptions to the page 
   async function getFinancePage(req,res){
     try {
       const subscriptions = await Subscription.find()
@@ -68,7 +74,7 @@ async function postSubscription(req, res) {
     }
   }
 
-
+//displays the form the user will use to post 
 function displaySubscriptionForm(req, res){
   res.render('subscriptionform')
 }

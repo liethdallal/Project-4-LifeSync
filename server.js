@@ -20,7 +20,7 @@ const oneTimePaymentRouter = require('./routes/onetimepaymentrouter')
 const nutritionRouter = require('./routes/nutritionrouter')
 const PORT = process.env.PORT 
 
-
+// Middleware setup
 app.use(logger('dev')) 
 app.use(express.static(path.join(__dirname, 'public')))
 app.use(express.urlencoded({ extended: true }))
@@ -44,7 +44,7 @@ app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, 'views'))
 
 
-
+// Route setup
 app.use('/', indexRouter)
 app.use('/users', userRouter)
 app.use('/todos', todoRouter)
@@ -53,6 +53,8 @@ app.use('/videogames-movies', movieRouter)
 app.use('/finances', subscriptionsRouter)
 app.use('/finances', oneTimePaymentRouter)
 app.use('/nutrition', nutritionRouter)
+
+// Error handling middleware
 app.use((err, req, res, next) => {
   res.render('error');
 })

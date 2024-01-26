@@ -28,6 +28,7 @@ function homepage(req, res) {
   res.render('homepage')
 }
 
+//renders error page
 function errorPage(req,res) {
   res.render('error')
 }

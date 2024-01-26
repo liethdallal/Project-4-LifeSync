@@ -1,6 +1,7 @@
 const Onetimepayment = require('../models/onetimepaymentmodel')
 const User = require('../models/usermodel')
 
+//creates a new post for the onetime payment collection and the users list of one time payments 
 async function postOnetimepayment(req, res) {
     try {
       const { name, cost } = req.body 
@@ -17,6 +18,7 @@ async function postOnetimepayment(req, res) {
     }
   }
 
+  //deletes a onetime payment from the collection and the users list 
   async function deleteOnetimepayment(req, res) {
     try {
       const onetimepaymentId = req.params.onetimepaymentId
@@ -32,7 +34,7 @@ async function postOnetimepayment(req, res) {
     }
   }
 
-
+  //updates the onetimepayment by its id 
   async function updateOnetimePayemnt(req, res) {
     try {
       const onetimepaymentId = req.params.onetimepaymentId
@@ -45,6 +47,7 @@ async function postOnetimepayment(req, res) {
     }
   }
   
+  //displays the onetimepayment form with its id in the input value 
   async function displayEditOnetimeForm(req, res) {
     try {
       const onetimepaymentId = req.params.onetimepaymentId
@@ -56,6 +59,7 @@ async function postOnetimepayment(req, res) {
     }
   }
 
+  //displays the post form for a onetimepayment 
 function displayOnetimepaymentForm(req, res){
   res.render('onetimepaymentform')
 }

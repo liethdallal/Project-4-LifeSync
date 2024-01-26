@@ -2,6 +2,7 @@ const Videogames = require('../models/videogamemodel')
 const Movie = require('../models/moviemodel')
 const User = require('../models/usermodel')
 
+//creates a new videogame with an Id that gets psuhed to an array in the users object
 async function postVideogame(req,res){
   try {
     const { title, img } = req.body 
@@ -18,6 +19,7 @@ async function postVideogame(req,res){
     }
 }
 
+//deletes a videogame from both the collection of games and users list
 async function deleteVideogame(req,res){
   try {
     const titleId = req.params.titleId
@@ -33,6 +35,7 @@ async function deleteVideogame(req,res){
   }
 }
 
+//passes variables to to both the games and movie page since they are rendered on one screen it is only in this controller 
 async function getVideogamesAndMoviesPage(req,res){
   try {
     const games = await Videogames.find()
@@ -45,6 +48,7 @@ async function getVideogamesAndMoviesPage(req,res){
   }
 }
 
+//Updates the vieogame by grabbinmg the value of a specific game id and acessing its properties 
 async function updateVideogame(req, res) {
   try {
     const titleId = req.params.titleId
@@ -57,6 +61,7 @@ async function updateVideogame(req, res) {
   }
 }
 
+//displays the videogame edit form and grabbing the value of the game id 
 async function displayEditVideogameForm(req, res) {
   try {
     const titleId = req.params.titleId
@@ -69,6 +74,7 @@ async function displayEditVideogameForm(req, res) {
   }
 }
 
+//displays the form used for posting a videogame 
 function getVideoGameForm(req,res){
   res.render('gameform')
 }

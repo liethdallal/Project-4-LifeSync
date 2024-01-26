@@ -1,6 +1,7 @@
 const Movie = require('../models/moviemodel')
 const User = require('../models/usermodel')
 
+//posts a movie and Pushes the movie id to both the users list and the colections of movies in database
 async function postMovie(req, res) {
   try {
     const { title, img } = req.body 
@@ -17,6 +18,7 @@ async function postMovie(req, res) {
   }
 }
 
+//deletes the movie from both the users list and collection of movies
 async function deleteMovie(req,res) {
   try {
     const titleId = req.params.titleId
@@ -33,6 +35,7 @@ async function deleteMovie(req,res) {
   }
 }
 
+//edits the movie by id in the collection of movies and gives user a chance to changes its properties 
 async function updateMovie(req, res) {
   try {
     const titleId = req.params.titleId
@@ -45,6 +48,7 @@ async function updateMovie(req, res) {
   }
 }
 
+//Passes the value of the movie id to the inputs of the edit form and renders the edit form
 async function displayEditMovieForm(req, res) {
   try {
     const titleId = req.params.titleId
@@ -57,6 +61,7 @@ async function displayEditMovieForm(req, res) {
   }
 }
 
+//displays the post form 
 function getMovieform(req,res){
   res.render('movieform')
 }

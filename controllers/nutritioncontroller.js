@@ -1,6 +1,7 @@
 const Nutrition = require('../models/nutritionmodel')
 const User = require('../models/usermodel')
 
+//creates a new post for the nutrition collection and the users list called nutrition 
 async function postNutrition(req, res) {
     try {
       const { name, servingsize, calories, sodium, sugar } = req.body 
@@ -17,6 +18,7 @@ async function postNutrition(req, res) {
     }
   }
 
+  //updates the nutition by its id 
   async function updateNutrition(req, res) {
     try {
       const nutritionId = req.params.nutritionId
@@ -29,7 +31,7 @@ async function postNutrition(req, res) {
     }
   }
 
-
+  //deletes a nutrition from the collection and the users list 
   async function deleteNutrition(req, res) {
     try {
       const nutritionId = req.params.nutritionId
@@ -46,7 +48,7 @@ async function postNutrition(req, res) {
   }
 
 
-
+  //displays the nutrition page while passing the variables and the user signed in 
   async function displayNutritionPage(req, res) {
     try {
       const nutritions = await Nutrition.find()
@@ -58,7 +60,7 @@ async function postNutrition(req, res) {
     }
   }
 
-  
+  //displays the nutrition form with its id in the input value 
   async function displayEditNutritionForm(req,res){
     try {
       const nutritionId = req.params.nutritionId
@@ -70,6 +72,7 @@ async function postNutrition(req, res) {
     }
   }
 
+  //displays the post form for a single nutrition 
 function displayNutritionForm(req, res){
   res.render('nutritionform')
 }

@@ -1,6 +1,7 @@
 const Todo = require('../models/todomodel')
 const User = require('../models/usermodel')
 
+//creates new task and pushes on users todo list and collections of todos
 async function postTask(req, res) {
     try {
       const { task, due } = req.body 
@@ -17,6 +18,7 @@ async function postTask(req, res) {
     }
   }
 
+  //updates the current task by grabbing the values of a selcted task 
   async function updateTask(req, res) {
     try {
       const taskId = req.params.taskId
@@ -29,7 +31,7 @@ async function postTask(req, res) {
     }
   }
 
-
+  //deletes a task by its id from users list and colection 
   async function deleteTask(req, res) {
     try {
       const taskId = req.params.taskId
@@ -46,7 +48,7 @@ async function postTask(req, res) {
   }
 
 
-
+  //displays the todo scheduler page while passing the todos and the user signed in 
   async function displayToDoPage(req, res) {
     try {
       const todos = await Todo.find()
@@ -58,7 +60,7 @@ async function postTask(req, res) {
     }
   }
 
-  
+  //displays the edit form with the value of a specific taskid 
   async function displayEditToDoForm(req,res){
     try {
       const taskId = req.params.taskId 
@@ -70,6 +72,7 @@ async function postTask(req, res) {
     }
   }
 
+//displays the ost route for a task and its due date
 function displayToDoForm(req, res){
   res.render('todoform')
 }
