@@ -1,5 +1,5 @@
 ## LifeSync Project Description
-
+ 
 Hey there! Welcome to LifeSync – the ultimate lifestyle management platform I've crafted with you in mind. Life can get hectic, so I've designed LifeSync to help you seamlessly organize different facets of your daily routine. Packed with a friendly interface and powerful features, LifeSync is your go-to solution for efficient task management, entertainment tracking, financial tracking, and nutrition tracking – all neatly consolidated in one place.
 
 ![Homepage](./public/imgs/lifesync-homepage-pic.png)
